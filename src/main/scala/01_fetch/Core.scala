@@ -29,11 +29,16 @@ class Core extends Module {
 	// 入力ポートinstを変数instで受け取る
 	val inst = io.imem.inst
 
+
+	// 終了 ----------------------------
+
 	// exit信号はinstが（読み込ませるプログラムの最終行）の場合にtrue.B
 	io.exit := (inst === 0x34333231.U(WORD_LEN.W))
 
 
+	// デバッグ --------------------------
 	printf(p"pc_reg: 0x${Hexadecimal(pc_reg)}\n")
 	printf(p"inst  : 0x${Hexadecimal(inst)}\n")
+
 	printf("------------\n") // サイクルの切れ目
 }
