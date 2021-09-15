@@ -11,7 +11,7 @@ class Top extends Module {
 
 	// CoreクラスとMemoryクラスをnewでインスタンス化，Moduleでハードウェア化
 	val core		= Module(new Core())
-	val memory 	= Module(new Memory())
+	val memory 		= Module(new Memory())
 
 	// coreのioとmemoryのioはImemPortIoを反転した関係にあるので，"<>"で一括接続
 	core.io.imem <> memory.io.imem
