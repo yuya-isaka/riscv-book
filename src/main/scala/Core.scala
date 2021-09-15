@@ -6,7 +6,7 @@ import common.Consts._
 
 class Core extends Module {
 	// 信号を生成
-	val = IO(new Bundle {
+	val io = IO(new Bundle {
 		// ImemPortIoをインスタンス化したものをFlippedで反転
 		val imem = Flipped(new ImemPortIo())
 
@@ -27,8 +27,13 @@ class Core extends Module {
 	// 出力ポートaddrにpc_regを接続
 	io.imem.addr := pc_reg
 	// 入力ポートinstを変数instで受け取る
-	val inst = io.mem.inst
+	val inst = io.imem.inst
 
 	// exit信号はinstが（読み込ませるプログラムの最終行）の場合にtrue.B
 	io.exit := (inst === 0x34333231.U(WORD_LEN.W))
+
+
+	printf(p"pc_reg: 0x${Hexadecimal(pc_reg)}\n")
+	printf(p"inst  : 0x${Hexadecimal(inst)}\n")
+	printf("------------\n") // サイクルの切れ目
 }
