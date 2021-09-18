@@ -21,7 +21,6 @@ class Top extends Module {
 	// データポート接続
 	core.io.dmem <> memory.io.dmem
 
-
 	// 出力値を設定
 	io.exit := core.io.exit
 }

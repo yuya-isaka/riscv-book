@@ -5,6 +5,8 @@ import chisel3.util._
 import chisel3.util.experimental.loadMemoryFromFile
 import common.Consts._
 
+// memが重要
+
 // 命令用ポート
 class ImemPortIo extends Bundle {
 	// 値のビット幅を指定できる（32）
@@ -16,6 +18,9 @@ class ImemPortIo extends Bundle {
 class DmemPortIo extends Bundle {
 	val addr = Input(UInt(WORD_LEN.W))
 	val rdata = Output(UInt(WORD_LEN.W))
+
+	val wen = Input(Bool())
+	val wdata = Input(UInt(WORD_LEN.W))
 }
 
 // メモリ
@@ -29,7 +34,7 @@ class Memory extends Module {
 
 	// メモリ実体
 	val mem = Mem(16384, UInt(8.W))
-	loadMemoryFromFile(mem, "src/hex/lw.hex")
+	loadMemoryFromFile(mem, "src/hex/sw.hex")
 
 	// 出力値を設定
 	io.imem.inst := Cat(
@@ -45,4 +50,11 @@ class Memory extends Module {
 		mem(io.dmem.addr + 1.U(WORD_LEN.W)),
 		mem(io.dmem.addr),
 	)
+
+	when(io.dmem.wen) {
+		mem(io.dmem.addr) := io.dmem.wdata(7, 0)
+		mem(io.dmem.addr + 1.U) := io.dmem.wdata(15,8)
+		mem(io.dmem.addr + 2.U) := io.dmem.wdata(23, 16)
+		mem(io.dmem.addr + 3.U) := io.dmem.wdata(31, 24)
+	}
 }

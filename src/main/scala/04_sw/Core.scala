@@ -5,7 +5,7 @@ import chisel3.util._
 import common.Consts._
 import common.Instructions._
 
-// instが重要（こいつに命令が入ってる．こいつを見ればわかる）
+// instとregfileが重要
 
 class Core extends Module {
 
@@ -46,21 +46,30 @@ class Core extends Module {
 	val imm_i = inst(31, 20)
 	val imm_i_sext = Cat(Fill(20, imm_i(11)), imm_i) // 符号拡張
 
+	// SW命令の即値(S形式)
+	val imm_s = Cat(inst(31, 25), inst(11, 7))
+	val imm_s_sext = Cat(Fill(20, imm_s(11)), imm_s) // 符号拡張
+
 	// EX -----------------------------------------------------
 
 	// 演算結果格納
 	val alu_out = MuxCase(0.U(WORD_LEN.W), Seq(
-		(inst === LW) -> (rs1_data + imm_i_sext)
+		(inst === LW) -> (rs1_data + imm_i_sext),
+		(inst === SW) -> (rs1_data + imm_s_sext)
 	))
 
 	// MEM -----------------------------------------------------
 
-	// 演算結果（メモリアドレス）をメモリへ(LW)
+	// 演算結果（メモリアドレス）をメモリへ（SW）
 	io.dmem.addr := alu_out
+
+	// 演算結果（メモリアドレス）をメモリへ（SW）
+	io.dmem.wen := (inst === SW)
+	io.dmem.wdata := rs2_data
 
 	// WB -----------------------------------------------------
 
-	// LW結果を受け取り
+	// LW結果を受け取り(LW命令でWB使うんだな)
 	val wb_data = io.dmem.rdata
 	when(inst === LW) {
 		regfile(wb_addr) := wb_data
@@ -68,22 +77,25 @@ class Core extends Module {
 
 	// 終了判定 -----------------------------------------------------
 
-	io.exit := (inst === 0x14131211.U(WORD_LEN.W))
+	io.exit := (inst === 0x00602823.U(WORD_LEN.W))
 
 	// デバッグ -----------------------------------------------------
 
-	printf(p"pc_reg(プログラムカウンタ): 0x${Hexadecimal(pc_reg)}\n")
-	printf(p"inst(命令): 0x${Hexadecimal(inst)}\n")
+	printf(p"pc_reg: 0x${Hexadecimal(pc_reg)}\n")
+	printf(p"inst: 0x${Hexadecimal(inst)}\n")
 
-	printf(p"rs1_addr(レジスタ１アドレス): $rs1_addr\n")
-	printf(p"rs1_data(レジスタ１データ): 0x${Hexadecimal(rs1_data)}\n")
+	printf(p"rs1_addr: $rs1_addr\n")
+	printf(p"rs1_data: 0x${Hexadecimal(rs1_data)}\n")
 
-	printf(p"rs2_addr(レジスタ２アドレス): $rs2_addr\n")
-	printf(p"rs2_data(レジスタ２データ): 0x${Hexadecimal(rs2_data)}\n")
+	printf(p"rs2_addr: $rs2_addr\n")
+	printf(p"rs2_data: 0x${Hexadecimal(rs2_data)}\n")
 
-	printf(p"wb_addr(書き込み先アドレス): $wb_addr\n")
-	printf(p"dmem.addr(ロードしたいメモリアドレス): 0x${io.dmem.addr}\n")
-	printf(p"wb_data(書き込みデータ 兼　ロードデータ): 0x${Hexadecimal(wb_data)}\n")
+	printf(p"wb_addr: $wb_addr\n")
+	printf(p"dmem.addr: ${io.dmem.addr}\n")
+	printf(p"wb_data: 0x${Hexadecimal(wb_data)}\n")
+
+	printf(p"dmem.wen: ${io.dmem.wen}\n")
+	printf(p"dmem.wdata: 0x${Hexadecimal(io.dmem.wdata)}\n")
 
 	printf("-----------------------------------------------------------\n")
 }
