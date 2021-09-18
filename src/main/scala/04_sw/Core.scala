@@ -1,9 +1,11 @@
-package lw
+package sw
 
 import chisel3._
 import chisel3.util._
 import common.Consts._
 import common.Instructions._
+
+// instが重要（こいつに命令が入ってる．こいつを見ればわかる）
 
 class Core extends Module {
 
@@ -70,17 +72,18 @@ class Core extends Module {
 
 	// デバッグ -----------------------------------------------------
 
-	printf(p"pc_reg: 0x${Hexadecimal(pc_reg)}\n")
-	printf(p"inst  : 0x${Hexadecimal(inst)}\n")
+	printf(p"pc_reg(プログラムカウンタ): 0x${Hexadecimal(pc_reg)}\n")
+	printf(p"inst(命令): 0x${Hexadecimal(inst)}\n")
 
-	printf(p"rs1_addr: $rs1_addr\n")
-	printf(p"rs2_addr: $rs2_addr\n")
-	printf(p"wb_addr : $wb_addr\n")
-	printf(p"rs1_data: 0x${Hexadecimal(rs1_data)}\n")
-	printf(p"rs2_data: 0x${Hexadecimal(rs2_data)}\n")
+	printf(p"rs1_addr(レジスタ１アドレス): $rs1_addr\n")
+	printf(p"rs1_data(レジスタ１データ): 0x${Hexadecimal(rs1_data)}\n")
 
-	printf(p"wb_data: 0x${Hexadecimal(wb_data)}\n")
-	printf(p"dmem.addr: 0x${io.dmem.addr}\n")
+	printf(p"rs2_addr(レジスタ２アドレス): $rs2_addr\n")
+	printf(p"rs2_data(レジスタ２データ): 0x${Hexadecimal(rs2_data)}\n")
+
+	printf(p"wb_addr(書き込み先アドレス): $wb_addr\n")
+	printf(p"dmem.addr(ロードしたいメモリアドレス): 0x${io.dmem.addr}\n")
+	printf(p"wb_data(書き込みデータ 兼　ロードデータ): 0x${Hexadecimal(wb_data)}\n")
 
 	printf("-----------------------------------------------------------\n")
 }
