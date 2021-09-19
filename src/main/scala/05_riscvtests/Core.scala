@@ -55,24 +55,31 @@ class Core extends Module {
 
 	// 演算結果格納
 	val alu_out = MuxCase(0.U(WORD_LEN.W), Seq(
-		(inst === LW) -> (rs1_data + imm_i_sext),
-		(inst === SW) -> (rs1_data + imm_s_sext)
+		(inst === LW || inst === ADDI) -> (rs1_data + imm_i_sext),
+		(inst === SW) -> (rs1_data + imm_s_sext),
+		(inst === ADD) -> (rs1_data + rs2_data),
+		(inst === SUB) -> (rs1_data - rs2_data)
 	))
 
-	// MEM -----------------------------------------------------
+	// MEM access -----------------------------------------------------
 
-	// 演算結果（メモリアドレス）をメモリへ（SW）
+	// 演算結果（メモリアドレス）をメモリへ（LW と SW）
 	io.dmem.addr := alu_out
 
-	// 演算結果（メモリアドレス）をメモリへ（SW）
+	// ストアしたいデータをメモリへ（SW）
 	io.dmem.wen := (inst === SW)
 	io.dmem.wdata := rs2_data
 
 	// WB -----------------------------------------------------
 
 	// LW結果を受け取り(LW命令でWB使うんだな)
-	val wb_data = io.dmem.rdata
-	when(inst === LW) {
+	// val wb_data = io.dmem.rdata
+	val wb_data = MuxCase(alu_out, Seq(
+		(inst === LW) -> io.dmem.rdata
+	))
+
+	// WBするものだけ記述
+	when(inst === LW || inst === ADD || inst === ADDI || inst === SUB) {
 		regfile(wb_addr) := wb_data
 	}
 
