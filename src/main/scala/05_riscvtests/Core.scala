@@ -19,13 +19,13 @@ class Core extends Module {
 	})
 
 	// レジスタ実体
-	val regfile = Mem(32, UInt(WORD_LEN.W))
+	val regfile = Mem(32, UInt(WORD_LEN.W)) // 複数のレジスタはこれで作る
 
 
 	// IF -----------------------------------------------------
 
 	// プログラムカウンタ
-	val pc_reg = RegInit(START_ADDR)
+	val pc_reg = RegInit(START_ADDR) // 単体のレジスタはこれで作る
 	pc_reg := pc_reg + 4.U(WORD_LEN.W)
 
 	// メモリから命令を受け取る
@@ -37,7 +37,7 @@ class Core extends Module {
 	// 解読
 	val rs1_addr = inst(19, 15)
 	val rs2_addr = inst(24, 20)
-	val wb_addr  = inst(11, 7)
+	val wb_addr  = inst(11, 7) // rd
 
 	// レジスタデータ読み出し
 	val rs1_data = Mux((rs1_addr =/= 0.U(WORD_LEN.U)), regfile(rs1_addr), 0.U(WORD_LEN.W))
@@ -58,7 +58,13 @@ class Core extends Module {
 		(inst === LW || inst === ADDI) -> (rs1_data + imm_i_sext),
 		(inst === SW) -> (rs1_data + imm_s_sext),
 		(inst === ADD) -> (rs1_data + rs2_data),
-		(inst === SUB) -> (rs1_data - rs2_data)
+		(inst === SUB) -> (rs1_data - rs2_data),
+		(inst === AND) -> (rs1_data & rs2_data),
+		(inst === OR) -> (rs1_data | rs2_data),
+		(inst === XOR) -> (rs1_data ^ rs2_data),
+		(inst === ANDI) -> (rs1_data & imm_i_sext),
+		(inst === ORI) -> (rs1_data | imm_i_sext),
+		(inst === XORI) -> (rs1_data ^ imm_i_sext)
 	))
 
 	// MEM access -----------------------------------------------------
@@ -79,7 +85,7 @@ class Core extends Module {
 	))
 
 	// WBするものだけ記述
-	when(inst === LW || inst === ADD || inst === ADDI || inst === SUB) {
+	when(inst === LW || inst === ADD || inst === ADDI || inst === SUB || inst === AND || inst === OR || inst === XOR || inst === ANDI || inst === ORI || inst === XORI) {
 		regfile(wb_addr) := wb_data
 	}
 
