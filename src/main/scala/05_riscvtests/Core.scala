@@ -34,8 +34,12 @@ class Core extends Module {
 	val br_flg = Wire(Bool())
 	val br_target = Wire(UInt(WORD_LEN.W))
 
+	val jmp_flg = (inst === JAL || inst === JALR)
+	val alu_out = Wire(UInt(WORD_LEN.W))
+
 	val pc_next = MuxCase(pc_plus4, Seq(
-		br_flg -> br_target
+		br_flg 	-> br_target,
+		jmp_flg -> alu_out
 	))
 	pc_reg := pc_next
 
@@ -65,6 +69,10 @@ class Core extends Module {
 	// 分岐命令の即値(B形式)
 	val imm_b = Cat(inst(31), inst(7), inst(30, 25), inst(11, 8))
 	val imm_b_sext = Cat(Fill(19, imm_b(11)), imm_b, 0.U(1.U)) // 最下位ビットを0にセットすることで必ず２の倍数
+
+	// ジャンプ命令の即値(J形式)
+	val imm_j = Cat(inst(31), inst(19, 12), inst(20), inst(30, 21))
+	val imm_j_sext = Cat(Fill(11, imm_j(19)), imm_j, 0.U(1.U))
 
 	// 演算内容，　オペランド１，　オペランド２，　メモリストアか否か，　WBするか否か，　WBのデータはどれ？
 	val csignals = ListLookup(inst,
@@ -97,19 +105,23 @@ class Core extends Module {
 			BGE 	-> List(ALU_BGE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
 			BLTU 	-> List(ALU_BLTU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
 			BGEU 	-> List(ALU_BGEU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
+			JAL 	-> List(ALU_ADD, OP1_PC, OP2_IMJ, MEN_X, REN_S, WB_PC),
+			JALR 	-> List(ALU_JALR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_PC),
 		)
 	)
 
 	val exe_fun :: op1_sel :: op2_sel :: mem_wen :: rf_wen :: wb_sel :: Nil = csignals
 
 	val op1_data = MuxCase(0.U(WORD_LEN.W), Seq(
-		(op1_sel === OP1_RS1) -> rs1_data
+		(op1_sel === OP1_RS1) -> rs1_data,
+		(op1_sel === OP1_PC) -> pc_reg
 	))
 
 	val op2_data = MuxCase(0.U(WORD_LEN.W), Seq(
 		(op2_sel === OP2_RS2) -> rs2_data,
 		(op2_sel === OP2_IMI) -> imm_i_sext,
 		(op2_sel === OP2_IMS) -> imm_s_sext,
+		(op2_sel === OP2_IMJ) -> imm_j_sext
 	))
 
 	// EX -----------------------------------------------------
@@ -129,7 +141,9 @@ class Core extends Module {
 	// ))
 
 	// UInt型が入る
-	val alu_out = MuxCase(0.U(WORD_LEN.W), Seq(
+	// val alu_out = MuxCase(0.U(WORD_LEN.W), Seq(
+	// 上で宣言したから書き方変わる
+	alu_out := MuxCase(0.U(WORD_LEN.W), Seq(
 		(exe_fun === ALU_ADD) 	-> (op1_data + op2_data),
 		(exe_fun === ALU_SUB) 	-> (op1_data - op2_data),
 		(exe_fun === ALU_AND) 	-> (op1_data & op2_data),
@@ -140,6 +154,7 @@ class Core extends Module {
 		(exe_fun === ALU_SRA) 	-> (op1_data.asSInt() >> op2_data(4, 0)).asUInt(),
 		(exe_fun === ALU_SLT) 	-> (op1_data.asSInt() < op2_data.asSInt()).asUInt(),
 		(exe_fun === ALU_SLTU) 	-> (op1_data < op2_data).asUInt(),
+		(exe_fun === ALU_JALR) 	-> (op1_data + op2_data) & ~1.U(WORD_LEN.W),
 	))
 
 	// 分岐するか否か
@@ -175,7 +190,8 @@ class Core extends Module {
 
 	// デフォルトは演算結果をWB, LW命令の時はメモリからの出力をWB
 	val wb_data = MuxCase(alu_out, Seq(
-		(wb_sel === WB_MEM) -> io.dmem.rdata
+		(wb_sel === WB_MEM) -> io.dmem.rdata,
+		(wb_sel === WB_PC) -> pc_plus4
 	))
 
 	// WBするものだけ記述
