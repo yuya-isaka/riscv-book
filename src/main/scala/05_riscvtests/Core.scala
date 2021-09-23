@@ -8,6 +8,9 @@ import common.Instructions._
 // instとregfileが重要
 // デコードの強化で，instをEX以降のステージに受け渡す必要がなくなった
 
+// CSR関連は，実際はCSRレジスタごとにアクセス権が異なっていたりと複雑
+// 今回はマシンモードとして最高特権で実行しているので，アクセス権などに関して考える必要はない
+
 // 5つのステージ
 class Core extends Module {
 
@@ -78,45 +81,55 @@ class Core extends Module {
 	val imm_u = inst(31, 12)
 	val imm_u_shifted = Cat(imm_u, Fill(12, 0.U)) // 12bit左シフト
 
+	// CSR命令の即値(Z形式)
+	val imm_z = inst(19, 15)
+	val imm_z_uext = Cat(Fill(27, 0.U), imm_z)
+
 	// 演算内容，　オペランド１，　オペランド２，　メモリストアか否か，　WBするか否か，　WBのデータはどれ？
 	val csignals = ListLookup(inst,
-			List(ALU_X, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
+			List(ALU_X, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
 		Array(
-			LW 		-> List(ALU_ADD, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_MEM),
-			SW 		-> List(ALU_ADD, OP1_RS1, OP2_IMS, MEN_S, REN_X, WB_X),
-			ADD 	-> List(ALU_ADD, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			ADDI 	-> List(ALU_ADD, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SUB 	-> List(ALU_SUB, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			AND 	-> List(ALU_AND, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			OR 		-> List(ALU_OR, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			XOR 	-> List(ALU_XOR, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			ANDI 	-> List(ALU_AND, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			ORI 	-> List(ALU_OR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			XORI 	-> List(ALU_XOR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SLL 	-> List(ALU_SLL, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			SRL 	-> List(ALU_SRL, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			SRA 	-> List(ALU_SRA, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			SLLI 	-> List(ALU_SLL, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SRLI 	-> List(ALU_SRL, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SRAI 	-> List(ALU_SRA, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SLT 	-> List(ALU_SLT, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			SLTU 	-> List(ALU_SLTU, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU),
-			SLTI 	-> List(ALU_SLT, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			SLTUI 	-> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU),
-			BEQ 	-> List(ALU_BEQ, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			BNE 	-> List(ALU_BNE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			BLT 	-> List(ALU_BLT, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			BGE 	-> List(ALU_BGE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			BLTU 	-> List(ALU_BLTU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			BGEU 	-> List(ALU_BGEU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X),
-			JAL 	-> List(ALU_ADD, OP1_PC, OP2_IMJ, MEN_X, REN_S, WB_PC),
-			JALR 	-> List(ALU_JALR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_PC),
-			LUI		-> List(ALU_ADD, OP1_X, OP2_IMU, MEN_X, REN_S, WB_ALU),
-			AUIPC	-> List(ALU_ADD, OP1_PC, OP2_IMU, MEN_X, REN_S, WB_ALU)
+			LW 		-> List(ALU_ADD, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_MEM, CSR_X),
+			SW 		-> List(ALU_ADD, OP1_RS1, OP2_IMS, MEN_S, REN_X, WB_X, CSR_X),
+			ADD 	-> List(ALU_ADD, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			ADDI 	-> List(ALU_ADD, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SUB 	-> List(ALU_SUB, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			AND 	-> List(ALU_AND, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			OR 		-> List(ALU_OR, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			XOR 	-> List(ALU_XOR, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			ANDI 	-> List(ALU_AND, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			ORI 	-> List(ALU_OR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			XORI 	-> List(ALU_XOR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLL 	-> List(ALU_SLL, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			SRL 	-> List(ALU_SRL, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			SRA 	-> List(ALU_SRA, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLLI 	-> List(ALU_SLL, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SRLI 	-> List(ALU_SRL, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SRAI 	-> List(ALU_SRA, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLT 	-> List(ALU_SLT, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLTU 	-> List(ALU_SLTU, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLTI 	-> List(ALU_SLT, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLTUI 	-> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			BEQ 	-> List(ALU_BEQ, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BNE 	-> List(ALU_BNE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BLT 	-> List(ALU_BLT, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BGE 	-> List(ALU_BGE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BLTU 	-> List(ALU_BLTU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BGEU 	-> List(ALU_BGEU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			JAL 	-> List(ALU_ADD, OP1_PC, OP2_IMJ, MEN_X, REN_S, WB_PC, CSR_X),
+			JALR 	-> List(ALU_JALR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_PC, CSR_X),
+			LUI		-> List(ALU_ADD, OP1_X, OP2_IMU, MEN_X, REN_S, WB_ALU, CSR_X),
+			AUIPC	-> List(ALU_ADD, OP1_PC, OP2_IMU, MEN_X, REN_S, WB_ALU, CSR_X),
+			CSRRW	-> List(ALU_COPY1, OP1_RS1, OP2_X, MEN_X, REN_S, WB_CSR, CSR_W),
+			CSRRWI	-> List(ALU_COPY1, OP1_IMZ, OP2_X, MEN_X, REN_S, WB_CSR, CSR_W),
+			CSRRS	-> List(ALU_COPY1, OP1_RS1, OP2_X, MEN_X, REN_S, WB_CSR, CSR_S),
+			CSRRSI	-> List(ALU_COPY1, OP1_IMZ, OP2_X, MEN_X, REN_S, WB_CSR, CSR_S),
+			CSRRC	-> List(ALU_COPY1, OP1_RS1, OP2_X, MEN_X, REN_S, WB_CSR, CSR_C),
+			CSRRCI	-> List(ALU_COPY1, OP1_IMZ, OP2_X, MEN_X, REN_S, WB_CSR, CSR_C),
 		)
 	)
 
-	val exe_fun :: op1_sel :: op2_sel :: mem_wen :: rf_wen :: wb_sel :: Nil = csignals
+	val exe_fun :: op1_sel :: op2_sel :: mem_wen :: rf_wen :: wb_sel :: csr_cmd :: Nil = csignals
 
 	val op1_data = MuxCase(0.U(WORD_LEN.W), Seq(
 		(op1_sel === OP1_RS1) -> rs1_data,
@@ -162,6 +175,7 @@ class Core extends Module {
 		(exe_fun === ALU_SLT) 	-> (op1_data.asSInt() < op2_data.asSInt()).asUInt(),
 		(exe_fun === ALU_SLTU) 	-> (op1_data < op2_data).asUInt(),
 		(exe_fun === ALU_JALR) 	-> (op1_data + op2_data) & ~1.U(WORD_LEN.W),
+		(exe_fun === ALU_COPY1) -> op1_data
 	))
 
 	// 分岐するか否か
@@ -187,6 +201,25 @@ class Core extends Module {
 	io.dmem.wen := mem_wen // instの再デコード処理が不要に
 	io.dmem.wdata := rs2_data
 
+
+	val csr_regfile = Mem(4096, UInt(WORD_LEN.W))
+	val csr_addr 	= inst(31, 20)
+
+	// CSRの読み出し
+	val csr_rdata 	= csr_regfile(csr_addr)
+
+	// CSRの書き込み
+	val csr_wdata = MuxCase(0.U(WORD_LEN.W), Seq(
+		(csr_cmd === CSR_W) -> op1_data,
+		(csr_cmd === CSR_S) -> (csr_rdata | op1_data),	// set
+		(csr_cmd === CSR_C) -> (csr_rdata & ~op1_data),	// clear
+	))
+
+	// 1.U以上であればCSR命令だと，csr_cmdで判別できるよう設定（consts.scalaで）
+	when(csr_cmd > 0.U) {
+		csr_regfile(csr_addr) := csr_wdata
+	}
+
 	// WB -----------------------------------------------------
 
 	// LW結果を受け取り(LW命令でWB使うんだな)
@@ -195,10 +228,14 @@ class Core extends Module {
 	// 	(inst === LW) -> io.dmem.rdata
 	// ))
 
-	// デフォルトは演算結果をWB, LW命令の時はメモリからの出力をWB
+	// デフォルトは演算結果をWB
+	// LW命令の時はメモリからの出力をWB
+	// ジャンプ命令の時はプログラムカウンタをWB(リターンアドレス)
+	// CSR命令の時はCSR読み出しデータをWB (書き込みデータではない)
 	val wb_data = MuxCase(alu_out, Seq(
 		(wb_sel === WB_MEM) -> io.dmem.rdata,
-		(wb_sel === WB_PC) -> pc_plus4
+		(wb_sel === WB_PC) -> pc_plus4,
+		(wb_sel === WB_CSR) -> csr_rdata,
 	))
 
 	// WBするものだけ記述
