@@ -16,40 +16,44 @@ class Core extends Module {
 
 	// 入出力
 	val io = IO(new Bundle {
-		val imem = Flipped(new ImemPortIo())
-		val dmem = Flipped(new DmemPortIo())
+		val imem: ImemPortIo = Flipped(new ImemPortIo())
+		val dmem: DmemPortIo = Flipped(new DmemPortIo())
 
-		val exit = Output(Bool())
+		val exit: Bool = Output(Bool())
+		val gp: UInt = Output(UInt(WORD_LEN.W))
 	})
 
 	// レジスタ実体
-	val regfile = Mem(32, UInt(WORD_LEN.W)) // 複数のレジスタはこれで作る
+	val regfile: Mem[UInt] = Mem(32, UInt(WORD_LEN.W)) // 複数のレジスタはこれで作る
+	val csr_regfile: Mem[UInt] = Mem(4096, UInt(WORD_LEN.W))
 
+	io.gp := regfile(3) // グローバルポインタ
 
 	// IF -----------------------------------------------------
 
 	// プログラムカウンタ
-	val pc_reg = RegInit(START_ADDR) // 単体のレジスタはこれで作る
+	val pc_reg: UInt = RegInit(START_ADDR) // 単体のレジスタはこれで作る
 	// pc_reg := pc_reg + 4.U(WORD_LEN.W)
-	val pc_plus4 = pc_reg + 4.U(WORD_LEN.W)
+	val pc_plus4: UInt = pc_reg + 4.U(WORD_LEN.W)
 
 	// Wireで宣言のみ
-	val br_flg = Wire(Bool())
-	val br_target = Wire(UInt(WORD_LEN.W))
+	val br_flg: Bool = Wire(Bool())
+	val br_target: UInt = Wire(UInt(WORD_LEN.W))
 
-	val jmp_flg = (inst === JAL || inst === JALR)
-	val alu_out = Wire(UInt(WORD_LEN.W))
 
-	val pc_next = MuxCase(pc_plus4, Seq(
+	// メモリから命令を受け取る
+	io.imem.addr := pc_reg
+	val inst: UInt = io.imem.inst
+
+	val jmp_flg: Bool = (inst === JAL || inst === JALR)
+	val alu_out: UInt = Wire(UInt(WORD_LEN.W))
+
+	val pc_next: UInt = MuxCase(pc_plus4, Seq(
 		br_flg 				-> br_target,
 		jmp_flg 			-> alu_out,
 		(inst === ECALL) 	-> csr_regfile(0x305) // 0x305:mtvecにはtrap_vectorアドレスが格納されている
 	))
 	pc_reg := pc_next
-
-	// メモリから命令を受け取る
-	io.imem.addr := pc_reg
-	val inst = io.imem.inst
 
 	// ID -----------------------------------------------------
 
@@ -110,13 +114,13 @@ class Core extends Module {
 			SLT 	-> List(ALU_SLT, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
 			SLTU 	-> List(ALU_SLTU, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
 			SLTI 	-> List(ALU_SLT, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
-			SLTUI 	-> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
-			BEQ 	-> List(ALU_BEQ, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
-			BNE 	-> List(ALU_BNE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
-			BLT 	-> List(ALU_BLT, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
-			BGE 	-> List(ALU_BGE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
-			BLTU 	-> List(ALU_BLTU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
-			BGEU 	-> List(ALU_BGEU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			SLTIU -> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			BEQ 	-> List(BR_BEQ, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BNE 	-> List(BR_BNE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BLT 	-> List(BR_BLT, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BGE 	-> List(BR_BGE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BLTU 	-> List(BR_BLTU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
+			BGEU 	-> List(BR_BGEU, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
 			JAL 	-> List(ALU_ADD, OP1_PC, OP2_IMJ, MEN_X, REN_S, WB_PC, CSR_X),
 			JALR 	-> List(ALU_JALR, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_PC, CSR_X),
 			LUI		-> List(ALU_ADD, OP1_X, OP2_IMU, MEN_X, REN_S, WB_ALU, CSR_X),
@@ -176,7 +180,7 @@ class Core extends Module {
 		(exe_fun === ALU_SRA) 	-> (op1_data.asSInt() >> op2_data(4, 0)).asUInt(),
 		(exe_fun === ALU_SLT) 	-> (op1_data.asSInt() < op2_data.asSInt()).asUInt(),
 		(exe_fun === ALU_SLTU) 	-> (op1_data < op2_data).asUInt(),
-		(exe_fun === ALU_JALR) 	-> (op1_data + op2_data) & ~1.U(WORD_LEN.W),
+		(exe_fun === ALU_JALR) 	-> ((op1_data + op2_data) & !(1.U(WORD_LEN.W))),
 		(exe_fun === ALU_COPY1) -> op1_data
 	))
 
@@ -191,7 +195,7 @@ class Core extends Module {
 	))
 
 	// 分岐先のメモリアドレス
-	br_target := pc_reg + imm_b_sext
+		br_target := pc_reg + imm_b_sext
 
 	// MEM access -----------------------------------------------------
 
@@ -204,7 +208,6 @@ class Core extends Module {
 	io.dmem.wdata := rs2_data
 
 
-	val csr_regfile = Mem(4096, UInt(WORD_LEN.W))
 	// val csr_addr 	= inst(31, 20)
 	val csr_addr	= Mux(csr_cmd === CSR_E, 0x342.U(CSR_ADDR_LEN.W), inst(31, 20))
 
@@ -215,7 +218,7 @@ class Core extends Module {
 	val csr_wdata = MuxCase(0.U(WORD_LEN.W), Seq(
 		(csr_cmd === CSR_W) -> op1_data,
 		(csr_cmd === CSR_S) -> (csr_rdata | op1_data),	// set
-		(csr_cmd === CSR_C) -> (csr_rdata & ~op1_data),	// clear
+		(csr_cmd === CSR_C) -> (csr_rdata & !op1_data),	// clear
 		(csr_cmd === CSR_E) -> 11.U(WORD_LEN.W),		// ecall
 	))
 
@@ -252,7 +255,7 @@ class Core extends Module {
 
 	// 終了判定 -----------------------------------------------------
 
-	io.exit := (inst === 0x00602823.U(WORD_LEN.W))
+	io.exit := (pc_reg === 0x44.U(WORD_LEN.W))
 
 	// デバッグ -----------------------------------------------------
 
@@ -271,6 +274,8 @@ class Core extends Module {
 
 	printf(p"dmem.wen: ${io.dmem.wen}\n")
 	printf(p"dmem.wdata: 0x${Hexadecimal(io.dmem.wdata)}\n")
+
+	printf(p"gp : ${regfile(3)}\n")
 
 	printf("-----------------------------------------------------------\n")
 }

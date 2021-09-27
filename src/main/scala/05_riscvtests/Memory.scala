@@ -34,7 +34,7 @@ class Memory extends Module {
 
 	// メモリ実体
 	val mem = Mem(16384, UInt(8.W))
-	loadMemoryFromFile(mem, "src/hex/sw.hex")
+	loadMemoryFromFile(mem, "riscv/rv32ui-p-add.hex")
 
 	// 出力値を設定
 	io.imem.inst := Cat(

@@ -2,6 +2,7 @@ package riscvtests
 
 import chisel3._
 import chisel3.util._
+import common.Consts._
 
 // Topはハードウェア生成とポート接続
 class Top extends Module {
@@ -9,6 +10,7 @@ class Top extends Module {
 	// 出力
 	val io = IO(new Bundle {
 		val exit = Output(Bool())
+		val gp = Output(UInt(WORD_LEN.W))
 	})
 
 	// コアとメモリを生成
@@ -24,4 +26,6 @@ class Top extends Module {
 
 	// 出力値を設定
 	io.exit := core.io.exit
+
+	io.gp := core.io.gp
 }
