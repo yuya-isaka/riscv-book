@@ -1,4 +1,4 @@
-package ui
+package {package}
 
 import org.scalatest._
 import chiseltest._
