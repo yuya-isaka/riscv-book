@@ -1,4 +1,4 @@
-package ui
+package riscvtests
 
 import org.scalatest._
 import chiseltest._

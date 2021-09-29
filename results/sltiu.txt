@@ -879,58 +879,45 @@ dmem.wdata: 0x00000000
 gp :           0
 -----------------------------------------------------------
 pc_reg: 0x00000174
-inst: 0xff0100b7
-rs1_addr:   2
+inst: 0x00000093
+rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  16
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:  4278255616
-wb_data: 0xff010000
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           0
 -----------------------------------------------------------
 pc_reg: 0x00000178
-inst: 0xf0008093
+inst: 0x0000b713
 rs1_addr:   1
-rs1_data: 0xff010000
+rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4278255360
-wb_data: 0xff00ff00
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           0
 -----------------------------------------------------------
 pc_reg: 0x0000017c
-inst: 0xf0f0e713
-rs1_addr:   1
-rs1_data: 0xff00ff00
-rs2_addr:  15
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:  4294967055
-wb_data: 0xffffff0f
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           0
 -----------------------------------------------------------
 pc_reg: 0x00000180
-inst: 0xf0f00393
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4294967055
-wb_data: 0xffffff0f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           0
------------------------------------------------------------
-pc_reg: 0x00000184
 inst: 0x00200193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -943,85 +930,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           0
 -----------------------------------------------------------
-pc_reg: 0x00000188
-inst: 0x1c771463
+pc_reg: 0x00000184
+inst: 0x26771263
 rs1_addr:  14
-rs1_data: 0xffffff0f
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0xffffff0f
-wb_addr:   8
+rs2_data: 0x00000000
+wb_addr:   4
 dmem.addr:           0
 wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0xffffff0f
-gp :           2
------------------------------------------------------------
-pc_reg: 0x0000018c
-inst: 0x0ff010b7
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390976
-wb_data: 0x0ff01000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           2
 -----------------------------------------------------------
-pc_reg: 0x00000190
-inst: 0xff008093
-rs1_addr:   1
-rs1_data: 0x0ff01000
-rs2_addr:  16
+pc_reg: 0x00000188
+inst: 0x00100093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :           2
+-----------------------------------------------------------
+pc_reg: 0x0000018c
+inst: 0x0010b713
+rs1_addr:   1
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x00000001
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :           2
+-----------------------------------------------------------
+pc_reg: 0x00000190
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           2
 -----------------------------------------------------------
 pc_reg: 0x00000194
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0x0ff00ff0
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           2
------------------------------------------------------------
-pc_reg: 0x00000198
-inst: 0x0ff013b7
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390976
-wb_data: 0x0ff01000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           2
------------------------------------------------------------
-pc_reg: 0x0000019c
-inst: 0xff038393
-rs1_addr:   7
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           2
------------------------------------------------------------
-pc_reg: 0x000001a0
 inst: 0x00300193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -1034,85 +995,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000002
 gp :           2
 -----------------------------------------------------------
-pc_reg: 0x000001a4
-inst: 0x1a771663
+pc_reg: 0x00000198
+inst: 0x24771863
 rs1_addr:  14
-rs1_data: 0x0ff00ff0
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0x0ff00ff0
-wb_addr:  12
+rs2_data: 0x00000000
+wb_addr:  16
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
+dmem.wdata: 0x00000000
+gp :           3
+-----------------------------------------------------------
+pc_reg: 0x0000019c
+inst: 0x00300093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   3
+rs2_data: 0x00000003
+wb_addr:   1
+dmem.addr:           3
+wb_data: 0x00000003
+dmem.wen:  0
+dmem.wdata: 0x00000003
+gp :           3
+-----------------------------------------------------------
+pc_reg: 0x000001a0
+inst: 0x0070b713
+rs1_addr:   1
+rs1_data: 0x00000003
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :           3
+-----------------------------------------------------------
+pc_reg: 0x000001a4
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000003
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000003
 gp :           3
 -----------------------------------------------------------
 pc_reg: 0x000001a8
-inst: 0x00ff00b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           3
------------------------------------------------------------
-pc_reg: 0x000001ac
-inst: 0x0ff08093
-rs1_addr:   1
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           3
------------------------------------------------------------
-pc_reg: 0x000001b0
-inst: 0x70f0e713
-rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           3
------------------------------------------------------------
-pc_reg: 0x000001b4
-inst: 0x00ff03b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           3
------------------------------------------------------------
-pc_reg: 0x000001b8
-inst: 0x7ff38393
-rs1_addr:   7
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           3
------------------------------------------------------------
-pc_reg: 0x000001bc
 inst: 0x00400193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -1125,85 +1060,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           3
 -----------------------------------------------------------
-pc_reg: 0x000001c0
-inst: 0x18771863
+pc_reg: 0x000001ac
+inst: 0x22771e63
 rs1_addr:  14
-rs1_data: 0x00ff07ff
+rs1_data: 0x00000001
 rs2_addr:   7
-rs2_data: 0x00ff07ff
-wb_addr:  16
+rs2_data: 0x00000001
+wb_addr:  28
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00ff07ff
+dmem.wdata: 0x00000001
 gp :           4
 -----------------------------------------------------------
-pc_reg: 0x000001c4
-inst: 0xf00ff0b7
-rs1_addr:  31
+pc_reg: 0x000001b0
+inst: 0x00700093
+rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000001
 wb_addr:   1
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
+dmem.addr:           7
+wb_data: 0x00000007
 dmem.wen:  0
-dmem.wdata: 0x00000000
+dmem.wdata: 0x00000001
 gp :           4
 -----------------------------------------------------------
-pc_reg: 0x000001c8
-inst: 0x00f08093
+pc_reg: 0x000001b4
+inst: 0x0030b713
 rs1_addr:   1
-rs1_data: 0xf00ff000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576335
-wb_data: 0xf00ff00f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           4
------------------------------------------------------------
-pc_reg: 0x000001cc
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0xf00ff00f
-rs2_addr:  16
-rs2_data: 0x00000000
+rs1_data: 0x00000007
+rs2_addr:   3
+rs2_data: 0x00000004
 wb_addr:  14
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000000
+dmem.wdata: 0x00000004
 gp :           4
 -----------------------------------------------------------
-pc_reg: 0x000001d0
-inst: 0xf00ff3b7
-rs1_addr:  31
+pc_reg: 0x000001b8
+inst: 0x00000393
+rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   7
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           4
 -----------------------------------------------------------
-pc_reg: 0x000001d4
-inst: 0x0ff38393
-rs1_addr:   7
-rs1_data: 0xf00ff000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           4
------------------------------------------------------------
-pc_reg: 0x000001d8
+pc_reg: 0x000001bc
 inst: 0x00500193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -1216,85 +1125,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000174
 gp :           4
 -----------------------------------------------------------
-pc_reg: 0x000001dc
-inst: 0x16771a63
+pc_reg: 0x000001c0
+inst: 0x22771463
 rs1_addr:  14
-rs1_data: 0xf00ff0ff
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0xf00ff0ff
-wb_addr:  20
+rs2_data: 0x00000000
+wb_addr:   8
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0xf00ff0ff
-gp :           5
------------------------------------------------------------
-pc_reg: 0x000001e0
-inst: 0xff0100b7
-rs1_addr:   2
-rs1_data: 0x00000000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4278255616
-wb_data: 0xff010000
-dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           5
 -----------------------------------------------------------
-pc_reg: 0x000001e4
-inst: 0xf0008093
-rs1_addr:   1
-rs1_data: 0xff010000
+pc_reg: 0x000001c4
+inst: 0x00000093
+rs1_addr:   0
+rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:  4278255360
-wb_data: 0xff00ff00
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           5
 -----------------------------------------------------------
-pc_reg: 0x000001e8
-inst: 0x0f00e093
+pc_reg: 0x000001c8
+inst: 0x8000b713
 rs1_addr:   1
-rs1_data: 0xff00ff00
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4278255600
-wb_data: 0xff00fff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           5
------------------------------------------------------------
-pc_reg: 0x000001ec
-inst: 0xff0103b7
-rs1_addr:   2
 rs1_data: 0x00000000
-rs2_addr:  16
+rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4278255616
-wb_data: 0xff010000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           5
 -----------------------------------------------------------
-pc_reg: 0x000001f0
-inst: 0xff038393
-rs1_addr:   7
-rs1_data: 0xff010000
-rs2_addr:  16
+pc_reg: 0x000001cc
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
 rs2_data: 0x00000000
 wb_addr:   7
-dmem.addr:  4278255600
-wb_data: 0xff00fff0
+dmem.addr:           1
+wb_data: 0x00000001
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           5
 -----------------------------------------------------------
-pc_reg: 0x000001f4
+pc_reg: 0x000001d0
 inst: 0x00600193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -1307,323 +1190,76 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           5
 -----------------------------------------------------------
-pc_reg: 0x000001f8
-inst: 0x14709c63
-rs1_addr:   1
-rs1_data: 0xff00fff0
+pc_reg: 0x000001d4
+inst: 0x20771a63
+rs1_addr:  14
+rs1_data: 0x00000001
 rs2_addr:   7
-rs2_data: 0xff00fff0
-wb_addr:  24
+rs2_data: 0x00000001
+wb_addr:  20
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0xff00fff0
+dmem.wdata: 0x00000001
 gp :           6
 -----------------------------------------------------------
-pc_reg: 0x000001fc
-inst: 0x00000213
+pc_reg: 0x000001d8
+inst: 0x800000b7
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   4
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000200
-inst: 0x0ff010b7
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:   267390976
-wb_data: 0x0ff01000
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           6
 -----------------------------------------------------------
-pc_reg: 0x00000204
-inst: 0xff008093
+pc_reg: 0x000001dc
+inst: 0x0000b713
 rs1_addr:   1
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000208
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0x0ff00ff0
-rs2_addr:  16
+rs1_data: 0x80000000
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:  14
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x0000020c
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0x0ff00ff0
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000210
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0x0ff00ff0
-wb_addr:   4
-dmem.addr:           1
-wb_data: 0x00000001
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000214
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000218
-inst: 0xfe5214e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   9
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000002
+dmem.wdata: 0x00000000
 gp :           6
 -----------------------------------------------------------
-pc_reg: 0x00000200
-inst: 0x0ff010b7
+pc_reg: 0x000001e0
+inst: 0x00000393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390976
-wb_data: 0x0ff01000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000204
-inst: 0xff008093
-rs1_addr:   1
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000208
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0x0ff00ff0
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x0000020c
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0x0ff00ff0
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000210
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   1
-rs2_data: 0x0ff00ff0
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000214
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000218
-inst: 0xfe5214e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   9
+wb_addr:   7
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           6
------------------------------------------------------------
-pc_reg: 0x0000021c
-inst: 0x0ff013b7
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390976
-wb_data: 0x0ff01000
-dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           6
 -----------------------------------------------------------
-pc_reg: 0x00000220
-inst: 0xff038393
-rs1_addr:   7
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           6
------------------------------------------------------------
-pc_reg: 0x00000224
+pc_reg: 0x000001e4
 inst: 0x00700193
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0x0ff00ff0
+rs2_data: 0x00000000
 wb_addr:   3
 dmem.addr:           7
 wb_data: 0x00000007
 dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
+dmem.wdata: 0x00000000
 gp :           6
 -----------------------------------------------------------
-pc_reg: 0x00000228
-inst: 0x12731463
-rs1_addr:   6
-rs1_data: 0x0ff00ff0
+pc_reg: 0x000001e8
+inst: 0x20771063
+rs1_addr:  14
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0x0ff00ff0
-wb_addr:   8
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :           7
------------------------------------------------------------
-pc_reg: 0x0000022c
-inst: 0x00000213
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   4
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000230
-inst: 0x00ff00b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000234
-inst: 0x0ff08093
-rs1_addr:   1
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000238
-inst: 0x70f0e713
-rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x0000023c
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   0
 dmem.addr:           0
@@ -1632,189 +1268,46 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           7
 -----------------------------------------------------------
-pc_reg: 0x00000240
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0x00ff07ff
+pc_reg: 0x000001ec
+inst: 0x800000b7
+rs1_addr:   0
+rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
+wb_addr:   1
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           7
 -----------------------------------------------------------
-pc_reg: 0x00000244
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0x00ff00ff
-wb_addr:   4
+pc_reg: 0x000001f0
+inst: 0x8000b713
+rs1_addr:   1
+rs1_data: 0x80000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:  14
 dmem.addr:           1
 wb_data: 0x00000001
 dmem.wen:  0
-dmem.wdata: 0x00ff00ff
+dmem.wdata: 0x00000000
 gp :           7
 -----------------------------------------------------------
-pc_reg: 0x00000248
-inst: 0x00200293
+pc_reg: 0x000001f4
+inst: 0x00100393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x0000024c
-inst: 0xfe5212e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   5
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000230
-inst: 0x00ff00b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000234
-inst: 0x0ff08093
-rs1_addr:   1
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000238
-inst: 0x70f0e713
-rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x0000023c
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000240
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0x00ff07ff
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000244
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
 rs2_addr:   1
-rs2_data: 0x00ff00ff
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00ff00ff
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000248
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x0000024c
-inst: 0xfe5212e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   5
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000250
-inst: 0x00ff03b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
+rs2_data: 0x80000000
 wb_addr:   7
-dmem.addr:    16711680
-wb_data: 0x00ff0000
+dmem.addr:           1
+wb_data: 0x00000001
 dmem.wen:  0
-dmem.wdata: 0x00000000
+dmem.wdata: 0x80000000
 gp :           7
 -----------------------------------------------------------
-pc_reg: 0x00000254
-inst: 0x7ff38393
-rs1_addr:   7
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           7
------------------------------------------------------------
-pc_reg: 0x00000258
+pc_reg: 0x000001f8
 inst: 0x00800193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -1827,293 +1320,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           7
 -----------------------------------------------------------
-pc_reg: 0x0000025c
-inst: 0x0e731a63
-rs1_addr:   6
-rs1_data: 0x00ff07ff
+pc_reg: 0x000001fc
+inst: 0x1e771663
+rs1_addr:  14
+rs1_data: 0x00000001
 rs2_addr:   7
-rs2_data: 0x00ff07ff
-wb_addr:  20
+rs2_data: 0x00000001
+wb_addr:  12
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00ff07ff
+dmem.wdata: 0x00000001
 gp :           8
 -----------------------------------------------------------
-pc_reg: 0x00000260
-inst: 0x00000213
+pc_reg: 0x00000200
+inst: 0x00000093
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   4
+wb_addr:   1
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           8
 -----------------------------------------------------------
-pc_reg: 0x00000264
-inst: 0xf00ff0b7
-rs1_addr:  31
+pc_reg: 0x00000204
+inst: 0x7ff0b713
+rs1_addr:   1
 rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000268
-inst: 0x00f08093
-rs1_addr:   1
-rs1_data: 0xf00ff000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576335
-wb_data: 0xf00ff00f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x0000026c
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0xf00ff00f
-rs2_addr:  16
+rs2_addr:  31
 rs2_data: 0x00000000
 wb_addr:  14
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000270
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000274
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000278
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0xf00ff0ff
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x0000027c
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0xf00ff00f
-wb_addr:   4
 dmem.addr:           1
 wb_data: 0x00000001
 dmem.wen:  0
-dmem.wdata: 0xf00ff00f
+dmem.wdata: 0x00000000
 gp :           8
 -----------------------------------------------------------
-pc_reg: 0x00000280
-inst: 0x00200293
+pc_reg: 0x00000208
+inst: 0x00100393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000284
-inst: 0xfe5210e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   1
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000264
-inst: 0xf00ff0b7
-rs1_addr:  31
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000268
-inst: 0x00f08093
-rs1_addr:   1
-rs1_data: 0xf00ff000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576335
-wb_data: 0xf00ff00f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x0000026c
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0xf00ff00f
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000270
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000274
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000278
-inst: 0x00070313
-rs1_addr:  14
-rs1_data: 0xf00ff0ff
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   6
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x0000027c
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
 rs2_addr:   1
-rs2_data: 0xf00ff00f
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0xf00ff00f
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000280
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000284
-inst: 0xfe5210e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   1
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000288
-inst: 0xf00ff3b7
-rs1_addr:  31
-rs1_data: 0x00000000
-rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   7
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
+dmem.addr:           1
+wb_data: 0x00000001
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           8
 -----------------------------------------------------------
-pc_reg: 0x0000028c
-inst: 0x0ff38393
-rs1_addr:   7
-rs1_data: 0xf00ff000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           8
------------------------------------------------------------
-pc_reg: 0x00000290
+pc_reg: 0x0000020c
 inst: 0x00900193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2126,215 +1385,72 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           8
 -----------------------------------------------------------
-pc_reg: 0x00000294
-inst: 0x0a731e63
-rs1_addr:   6
-rs1_data: 0xf00ff0ff
+pc_reg: 0x00000210
+inst: 0x1c771c63
+rs1_addr:  14
+rs1_data: 0x00000001
 rs2_addr:   7
-rs2_data: 0xf00ff0ff
-wb_addr:  28
+rs2_data: 0x00000001
+wb_addr:  24
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0xf00ff0ff
+dmem.wdata: 0x00000001
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x00000298
-inst: 0x00000213
+pc_reg: 0x00000214
+inst: 0x800000b7
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   4
-dmem.addr:           0
-wb_data: 0x00000000
+wb_addr:   1
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x0000029c
-inst: 0x0ff010b7
-rs1_addr:   0
-rs1_data: 0x00000000
+pc_reg: 0x00000218
+inst: 0xfff08093
+rs1_addr:   1
+rs1_data: 0x80000000
 rs2_addr:  31
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:   267390976
-wb_data: 0x0ff01000
+dmem.addr:  2147483647
+wb_data: 0x7fffffff
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x000002a0
-inst: 0xff008093
+pc_reg: 0x0000021c
+inst: 0x0000b713
 rs1_addr:   1
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002a4
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0x0ff00ff0
-rs2_addr:  16
+rs1_data: 0x7fffffff
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:  14
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002a8
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0x0ff00ff0
-wb_addr:   4
-dmem.addr:           1
-wb_data: 0x00000001
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002ac
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002b0
-inst: 0xfe5216e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:  13
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000002
+dmem.wdata: 0x00000000
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x0000029c
-inst: 0x0ff010b7
+pc_reg: 0x00000220
+inst: 0x00000393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  31
+rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390976
-wb_data: 0x0ff01000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002a0
-inst: 0xff008093
-rs1_addr:   1
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002a4
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0x0ff00ff0
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002a8
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   1
-rs2_data: 0x0ff00ff0
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002ac
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002b0
-inst: 0xfe5216e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:  13
+wb_addr:   7
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002b4
-inst: 0x0ff013b7
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390976
-wb_data: 0x0ff01000
-dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x000002b8
-inst: 0xff038393
-rs1_addr:   7
-rs1_data: 0x0ff01000
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:   267390960
-wb_data: 0x0ff00ff0
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :           9
------------------------------------------------------------
-pc_reg: 0x000002bc
+pc_reg: 0x00000224
 inst: 0x00a00193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2347,63 +1463,11 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           9
 -----------------------------------------------------------
-pc_reg: 0x000002c0
-inst: 0x08771863
+pc_reg: 0x00000228
+inst: 0x1c771063
 rs1_addr:  14
-rs1_data: 0x0ff00ff0
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0x0ff00ff0
-wb_addr:  16
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x0ff00ff0
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002c4
-inst: 0x00000213
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   4
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002c8
-inst: 0x00ff00b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002cc
-inst: 0x0ff08093
-rs1_addr:   1
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002d0
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   0
 dmem.addr:           0
@@ -2412,163 +1476,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          10
 -----------------------------------------------------------
-pc_reg: 0x000002d4
-inst: 0xf0f0e713
-rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:  4294967295
-wb_data: 0xffffffff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002d8
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0x00ff00ff
-wb_addr:   4
-dmem.addr:           1
-wb_data: 0x00000001
-dmem.wen:  0
-dmem.wdata: 0x00ff00ff
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002dc
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002e0
-inst: 0xfe5214e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   9
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002c8
-inst: 0x00ff00b7
-rs1_addr:  30
-rs1_data: 0x00000000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002cc
-inst: 0x0ff08093
-rs1_addr:   1
-rs1_data: 0x00ff0000
-rs2_addr:  31
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002d0
-inst: 0x00000013
+pc_reg: 0x0000022c
+inst: 0x800000b7
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
+wb_addr:   1
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          10
 -----------------------------------------------------------
-pc_reg: 0x000002d4
-inst: 0xf0f0e713
+pc_reg: 0x00000230
+inst: 0xfff08093
 rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
+rs1_data: 0x80000000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:  2147483647
+wb_data: 0x7fffffff
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          10
+-----------------------------------------------------------
+pc_reg: 0x00000234
+inst: 0x7ff0b713
+rs1_addr:   1
+rs1_data: 0x7fffffff
+rs2_addr:  31
 rs2_data: 0x00000000
 wb_addr:  14
-dmem.addr:  4294967295
-wb_data: 0xffffffff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002d8
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   1
-rs2_data: 0x00ff00ff
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00ff00ff
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002dc
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          10
------------------------------------------------------------
-pc_reg: 0x000002e0
-inst: 0xfe5214e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   9
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000002
+dmem.wdata: 0x00000000
 gp :          10
 -----------------------------------------------------------
-pc_reg: 0x000002e4
-inst: 0xfff00393
+pc_reg: 0x00000238
+inst: 0x00000393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  31
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   7
-dmem.addr:  4294967295
-wb_data: 0xffffffff
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          10
 -----------------------------------------------------------
-pc_reg: 0x000002e8
+pc_reg: 0x0000023c
 inst: 0x00b00193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2581,267 +1541,59 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          10
 -----------------------------------------------------------
-pc_reg: 0x000002ec
-inst: 0x06771263
+pc_reg: 0x00000240
+inst: 0x1a771463
 rs1_addr:  14
-rs1_data: 0xffffffff
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0xffffffff
-wb_addr:   4
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0xffffffff
-gp :          11
------------------------------------------------------------
-pc_reg: 0x000002f0
-inst: 0x00000213
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
 rs2_data: 0x00000000
-wb_addr:   4
+wb_addr:   8
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          11
 -----------------------------------------------------------
-pc_reg: 0x000002f4
-inst: 0xf00ff0b7
-rs1_addr:  31
+pc_reg: 0x00000244
+inst: 0x800000b7
+rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          11
 -----------------------------------------------------------
-pc_reg: 0x000002f8
-inst: 0x00f08093
+pc_reg: 0x00000248
+inst: 0x7ff0b713
 rs1_addr:   1
-rs1_data: 0xf00ff000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576335
-wb_data: 0xf00ff00f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x000002fc
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000300
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000304
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0xf00ff00f
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000308
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000000
-rs2_addr:   1
-rs2_data: 0xf00ff00f
-wb_addr:   4
-dmem.addr:           1
-wb_data: 0x00000001
-dmem.wen:  0
-dmem.wdata: 0xf00ff00f
-gp :          11
------------------------------------------------------------
-pc_reg: 0x0000030c
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000310
-inst: 0xfe5212e3
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   5
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :          11
------------------------------------------------------------
-pc_reg: 0x000002f4
-inst: 0xf00ff0b7
-rs1_addr:  31
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x000002f8
-inst: 0x00f08093
-rs1_addr:   1
-rs1_data: 0xf00ff000
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   1
-dmem.addr:  4027576335
-wb_data: 0xf00ff00f
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x000002fc
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000300
-inst: 0x00000013
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000304
-inst: 0x0f00e713
-rs1_addr:   1
-rs1_data: 0xf00ff00f
-rs2_addr:  16
-rs2_data: 0x00000000
-wb_addr:  14
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000308
-inst: 0x00120213
-rs1_addr:   4
-rs1_data: 0x00000001
-rs2_addr:   1
-rs2_data: 0xf00ff00f
-wb_addr:   4
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0xf00ff00f
-gp :          11
------------------------------------------------------------
-pc_reg: 0x0000030c
-inst: 0x00200293
-rs1_addr:   0
-rs1_data: 0x00000000
-rs2_addr:   2
-rs2_data: 0x00000000
-wb_addr:   5
-dmem.addr:           2
-wb_data: 0x00000002
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000310
-inst: 0xfe5212e3
-rs1_addr:   4
-rs1_data: 0x00000002
-rs2_addr:   5
-rs2_data: 0x00000002
-wb_addr:   5
-dmem.addr:           0
-wb_data: 0x00000000
-dmem.wen:  0
-dmem.wdata: 0x00000002
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000314
-inst: 0xf00ff3b7
-rs1_addr:  31
-rs1_data: 0x00000000
-rs2_addr:   0
-rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4027576320
-wb_data: 0xf00ff000
-dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          11
------------------------------------------------------------
-pc_reg: 0x00000318
-inst: 0x0ff38393
-rs1_addr:   7
-rs1_data: 0xf00ff000
+rs1_data: 0x80000000
 rs2_addr:  31
 rs2_data: 0x00000000
-wb_addr:   7
-dmem.addr:  4027576575
-wb_data: 0xf00ff0ff
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          11
 -----------------------------------------------------------
-pc_reg: 0x0000031c
+pc_reg: 0x0000024c
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          11
+-----------------------------------------------------------
+pc_reg: 0x00000250
 inst: 0x00c00193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2854,46 +1606,72 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          11
 -----------------------------------------------------------
-pc_reg: 0x00000320
-inst: 0x02771863
+pc_reg: 0x00000254
+inst: 0x18771a63
 rs1_addr:  14
-rs1_data: 0xf00ff0ff
+rs1_data: 0x00000000
 rs2_addr:   7
-rs2_data: 0xf00ff0ff
-wb_addr:  16
+rs2_data: 0x00000000
+wb_addr:  20
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0xf00ff0ff
+dmem.wdata: 0x00000000
 gp :          12
 -----------------------------------------------------------
-pc_reg: 0x00000324
-inst: 0x0f006093
+pc_reg: 0x00000258
+inst: 0x800000b7
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  16
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:         240
-wb_data: 0x000000f0
+dmem.addr:  2147483648
+wb_data: 0x80000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          12
 -----------------------------------------------------------
-pc_reg: 0x00000328
-inst: 0x0f000393
+pc_reg: 0x0000025c
+inst: 0xfff08093
+rs1_addr:   1
+rs1_data: 0x80000000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:  2147483647
+wb_data: 0x7fffffff
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          12
+-----------------------------------------------------------
+pc_reg: 0x00000260
+inst: 0x8000b713
+rs1_addr:   1
+rs1_data: 0x7fffffff
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          12
+-----------------------------------------------------------
+pc_reg: 0x00000264
+inst: 0x00100393
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  16
-rs2_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x7fffffff
 wb_addr:   7
-dmem.addr:         240
-wb_data: 0x000000f0
+dmem.addr:           1
+wb_data: 0x00000001
 dmem.wen:  0
-dmem.wdata: 0x00000000
+dmem.wdata: 0x7fffffff
 gp :          12
 -----------------------------------------------------------
-pc_reg: 0x0000032c
+pc_reg: 0x00000268
 inst: 0x00d00193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2906,59 +1684,111 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          12
 -----------------------------------------------------------
-pc_reg: 0x00000330
-inst: 0x02709063
-rs1_addr:   1
-rs1_data: 0x000000f0
+pc_reg: 0x0000026c
+inst: 0x16771e63
+rs1_addr:  14
+rs1_data: 0x00000001
 rs2_addr:   7
-rs2_data: 0x000000f0
-wb_addr:   0
+rs2_data: 0x00000001
+wb_addr:  28
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x000000f0
+dmem.wdata: 0x00000001
 gp :          13
 -----------------------------------------------------------
-pc_reg: 0x00000334
-inst: 0x00ff00b7
-rs1_addr:  30
+pc_reg: 0x00000270
+inst: 0x00000093
+rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  15
+rs2_addr:   0
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:    16711680
-wb_data: 0x00ff0000
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :          13
 -----------------------------------------------------------
-pc_reg: 0x00000338
-inst: 0x0ff08093
+pc_reg: 0x00000274
+inst: 0xfff0b713
 rs1_addr:   1
-rs1_data: 0x00ff0000
+rs1_data: 0x00000000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          13
+-----------------------------------------------------------
+pc_reg: 0x00000278
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          13
+-----------------------------------------------------------
+pc_reg: 0x0000027c
+inst: 0x00e00193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  14
+rs2_data: 0x00000001
+wb_addr:   3
+dmem.addr:          14
+wb_data: 0x0000000e
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          13
+-----------------------------------------------------------
+pc_reg: 0x00000280
+inst: 0x16771463
+rs1_addr:  14
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:   8
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          14
+-----------------------------------------------------------
+pc_reg: 0x00000284
+inst: 0xfff00093
+rs1_addr:   0
+rs1_data: 0x00000000
 rs2_addr:  31
 rs2_data: 0x00000000
 wb_addr:   1
-dmem.addr:    16711935
-wb_data: 0x00ff00ff
+dmem.addr:  4294967295
+wb_data: 0xffffffff
 dmem.wen:  0
 dmem.wdata: 0x00000000
-gp :          13
+gp :          14
 -----------------------------------------------------------
-pc_reg: 0x0000033c
-inst: 0x70f0e013
+pc_reg: 0x00000288
+inst: 0x0010b713
 rs1_addr:   1
-rs1_data: 0x00ff00ff
-rs2_addr:  15
-rs2_data: 0x00000000
-wb_addr:   0
-dmem.addr:    16713727
-wb_data: 0x00ff07ff
+rs1_data: 0xffffffff
+rs2_addr:   1
+rs2_data: 0xffffffff
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x00000000
-gp :          13
+dmem.wdata: 0xffffffff
+gp :          14
 -----------------------------------------------------------
-pc_reg: 0x00000340
+pc_reg: 0x0000028c
 inst: 0x00000393
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2969,22 +1799,1608 @@ dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
-gp :          13
+gp :          14
 -----------------------------------------------------------
-pc_reg: 0x00000344
-inst: 0x00e00193
+pc_reg: 0x00000290
+inst: 0x00f00193
 rs1_addr:   0
 rs1_data: 0x00000000
-rs2_addr:  14
-rs2_data: 0xf00ff0ff
+rs2_addr:  15
+rs2_data: 0x00000000
 wb_addr:   3
-dmem.addr:          14
-wb_data: 0x0000000e
+dmem.addr:          15
+wb_data: 0x0000000f
 dmem.wen:  0
-dmem.wdata: 0xf00ff0ff
-gp :          13
+dmem.wdata: 0x00000000
+gp :          14
+-----------------------------------------------------------
+pc_reg: 0x00000294
+inst: 0x14771a63
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:  20
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          15
+-----------------------------------------------------------
+pc_reg: 0x00000298
+inst: 0xfff00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:  4294967295
+wb_data: 0xffffffff
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          15
+-----------------------------------------------------------
+pc_reg: 0x0000029c
+inst: 0xfff0b713
+rs1_addr:   1
+rs1_data: 0xffffffff
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          15
+-----------------------------------------------------------
+pc_reg: 0x000002a0
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          15
+-----------------------------------------------------------
+pc_reg: 0x000002a4
+inst: 0x01000193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  16
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          16
+wb_data: 0x00000010
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          15
+-----------------------------------------------------------
+pc_reg: 0x000002a8
+inst: 0x14771063
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          16
+-----------------------------------------------------------
+pc_reg: 0x000002ac
+inst: 0x00b00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  11
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          11
+wb_data: 0x0000000b
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          16
+-----------------------------------------------------------
+pc_reg: 0x000002b0
+inst: 0x00d0b093
+rs1_addr:   1
+rs1_data: 0x0000000b
+rs2_addr:  13
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          16
+-----------------------------------------------------------
+pc_reg: 0x000002b4
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000001
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          16
+-----------------------------------------------------------
+pc_reg: 0x000002b8
+inst: 0x01100193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  17
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          17
+wb_data: 0x00000011
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          16
+-----------------------------------------------------------
+pc_reg: 0x000002bc
+inst: 0x12709663
+rs1_addr:   1
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:  12
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002c0
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002c4
+inst: 0x00f00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  15
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          15
+wb_data: 0x0000000f
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002c8
+inst: 0x00a0b713
+rs1_addr:   1
+rs1_data: 0x0000000f
+rs2_addr:  10
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002cc
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d0
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000f
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000f
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d4
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d8
+inst: 0xfe5216e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  13
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002c4
+inst: 0x00f00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  15
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          15
+wb_data: 0x0000000f
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002c8
+inst: 0x00a0b713
+rs1_addr:   1
+rs1_data: 0x0000000f
+rs2_addr:  10
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002cc
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d0
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x0000000f
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x0000000f
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d4
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002d8
+inst: 0xfe5216e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  13
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002dc
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002e0
+inst: 0x01200193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  18
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          18
+wb_data: 0x00000012
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          17
+-----------------------------------------------------------
+pc_reg: 0x000002e4
+inst: 0x10731263
+rs1_addr:   6
+rs1_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002e8
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002ec
+inst: 0x00a00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  10
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          10
+wb_data: 0x0000000a
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f0
+inst: 0x0100b713
+rs1_addr:   1
+rs1_data: 0x0000000a
+rs2_addr:  16
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f4
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f8
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000001
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002fc
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000a
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000a
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000300
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000304
+inst: 0xfe5214e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   9
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002ec
+inst: 0x00a00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  10
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          10
+wb_data: 0x0000000a
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f0
+inst: 0x0100b713
+rs1_addr:   1
+rs1_data: 0x0000000a
+rs2_addr:  16
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f4
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002f8
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000001
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x000002fc
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x0000000a
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x0000000a
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000300
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000304
+inst: 0xfe5214e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   9
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000308
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000a
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000a
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x0000030c
+inst: 0x01300193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  19
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          19
+wb_data: 0x00000013
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          18
+-----------------------------------------------------------
+pc_reg: 0x00000310
+inst: 0x0c731c63
+rs1_addr:   6
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:  24
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000314
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000318
+inst: 0x01000093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  16
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          16
+wb_data: 0x00000010
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x0000031c
+inst: 0x0090b713
+rs1_addr:   1
+rs1_data: 0x00000010
+rs2_addr:   9
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000320
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000324
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000328
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x0000032c
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000010
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000010
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000330
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000334
+inst: 0xfe5212e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   5
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000318
+inst: 0x01000093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  16
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          16
+wb_data: 0x00000010
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x0000031c
+inst: 0x0090b713
+rs1_addr:   1
+rs1_data: 0x00000010
+rs2_addr:   9
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000320
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000324
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000328
+inst: 0x00070313
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   6
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x0000032c
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x00000010
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000010
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000330
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000334
+inst: 0xfe5212e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   5
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000338
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x0000033c
+inst: 0x01400193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  20
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          20
+wb_data: 0x00000014
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          19
+-----------------------------------------------------------
+pc_reg: 0x00000340
+inst: 0x0a731463
+rs1_addr:   6
+rs1_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:   8
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000344
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
 -----------------------------------------------------------
 pc_reg: 0x00000348
+inst: 0x00b00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  11
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          11
+wb_data: 0x0000000b
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x0000034c
+inst: 0x00f0b713
+rs1_addr:   1
+rs1_data: 0x0000000b
+rs2_addr:  15
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000350
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000b
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000b
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000354
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000358
+inst: 0xfe5218e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  17
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000348
+inst: 0x00b00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  11
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          11
+wb_data: 0x0000000b
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x0000034c
+inst: 0x00f0b713
+rs1_addr:   1
+rs1_data: 0x0000000b
+rs2_addr:  15
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000350
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x0000000b
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x0000000b
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000354
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000358
+inst: 0xfe5218e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  17
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x0000035c
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000b
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000b
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000360
+inst: 0x01500193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  21
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          21
+wb_data: 0x00000015
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          20
+-----------------------------------------------------------
+pc_reg: 0x00000364
+inst: 0x08771263
+rs1_addr:  14
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000368
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x0000036c
+inst: 0x01100093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  17
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          17
+wb_data: 0x00000011
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000370
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000374
+inst: 0x0080b713
+rs1_addr:   1
+rs1_data: 0x00000011
+rs2_addr:   8
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000378
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000011
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000011
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x0000037c
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000380
+inst: 0xfe5216e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  13
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x0000036c
+inst: 0x01100093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  17
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          17
+wb_data: 0x00000011
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000370
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000374
+inst: 0x0080b713
+rs1_addr:   1
+rs1_data: 0x00000011
+rs2_addr:   8
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000378
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x00000011
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000011
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x0000037c
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000380
+inst: 0xfe5216e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:  13
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000384
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x00000388
+inst: 0x01600193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  22
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          22
+wb_data: 0x00000016
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          21
+-----------------------------------------------------------
+pc_reg: 0x0000038c
+inst: 0x04771e63
+rs1_addr:  14
+rs1_data: 0x00000000
+rs2_addr:   7
+rs2_data: 0x00000000
+wb_addr:  28
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x00000390
+inst: 0x00000213
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   4
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x00000394
+inst: 0x00c00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  12
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          12
+wb_data: 0x0000000c
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x00000398
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x0000039c
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a0
+inst: 0x00e0b713
+rs1_addr:   1
+rs1_data: 0x0000000c
+rs2_addr:  14
+rs2_data: 0x00000000
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a4
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000c
+wb_addr:   4
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000c
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a8
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003ac
+inst: 0xfe5214e3
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   9
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x00000394
+inst: 0x00c00093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  12
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:          12
+wb_data: 0x0000000c
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x00000398
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x0000039c
+inst: 0x00000013
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a0
+inst: 0x00e0b713
+rs1_addr:   1
+rs1_data: 0x0000000c
+rs2_addr:  14
+rs2_data: 0x00000001
+wb_addr:  14
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a4
+inst: 0x00120213
+rs1_addr:   4
+rs1_data: 0x00000001
+rs2_addr:   1
+rs2_data: 0x0000000c
+wb_addr:   4
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x0000000c
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003a8
+inst: 0x00200293
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   2
+rs2_data: 0x00000000
+wb_addr:   5
+dmem.addr:           2
+wb_data: 0x00000002
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003ac
+inst: 0xfe5214e3
+rs1_addr:   4
+rs1_data: 0x00000002
+rs2_addr:   5
+rs2_data: 0x00000002
+wb_addr:   9
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000002
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003b0
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x0000000c
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x0000000c
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003b4
+inst: 0x01700193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  23
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          23
+wb_data: 0x00000017
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          22
+-----------------------------------------------------------
+pc_reg: 0x000003b8
+inst: 0x02771863
+rs1_addr:  14
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:  16
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          23
+-----------------------------------------------------------
+pc_reg: 0x000003bc
+inst: 0xfff03093
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          23
+-----------------------------------------------------------
+pc_reg: 0x000003c0
+inst: 0x00100393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   1
+rs2_data: 0x00000001
+wb_addr:   7
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          23
+-----------------------------------------------------------
+pc_reg: 0x000003c4
+inst: 0x01800193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  24
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          24
+wb_data: 0x00000018
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          23
+-----------------------------------------------------------
+pc_reg: 0x000003c8
+inst: 0x02709063
+rs1_addr:   1
+rs1_data: 0x00000001
+rs2_addr:   7
+rs2_data: 0x00000001
+wb_addr:   0
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000001
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003cc
+inst: 0x00ff00b7
+rs1_addr:  30
+rs1_data: 0x00000000
+rs2_addr:  15
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:    16711680
+wb_data: 0x00ff0000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003d0
+inst: 0x0ff08093
+rs1_addr:   1
+rs1_data: 0x00ff0000
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   1
+dmem.addr:    16711935
+wb_data: 0x00ff00ff
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003d4
+inst: 0xfff0b013
+rs1_addr:   1
+rs1_data: 0x00ff00ff
+rs2_addr:  31
+rs2_data: 0x00000000
+wb_addr:   0
+dmem.addr:           1
+wb_data: 0x00000001
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003d8
+inst: 0x00000393
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:   0
+rs2_data: 0x00000000
+wb_addr:   7
+dmem.addr:           0
+wb_data: 0x00000000
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003dc
+inst: 0x01900193
+rs1_addr:   0
+rs1_data: 0x00000000
+rs2_addr:  25
+rs2_data: 0x00000000
+wb_addr:   3
+dmem.addr:          25
+wb_data: 0x00000019
+dmem.wen:  0
+dmem.wdata: 0x00000000
+gp :          24
+-----------------------------------------------------------
+pc_reg: 0x000003e0
 inst: 0x00701463
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -2995,22 +3411,22 @@ dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
-gp :          14
+gp :          25
 -----------------------------------------------------------
-pc_reg: 0x0000034c
+pc_reg: 0x000003e4
 inst: 0x02301063
 rs1_addr:   0
 rs1_data: 0x00000000
 rs2_addr:   3
-rs2_data: 0x0000000e
+rs2_data: 0x00000019
 wb_addr:   0
 dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
-dmem.wdata: 0x0000000e
-gp :          14
+dmem.wdata: 0x00000019
+gp :          25
 -----------------------------------------------------------
-pc_reg: 0x0000036c
+pc_reg: 0x00000404
 inst: 0x0ff0000f
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -3021,9 +3437,9 @@ dmem.addr:           0
 wb_data: 0x00000000
 dmem.wen:  0
 dmem.wdata: 0x00000000
-gp :          14
+gp :          25
 -----------------------------------------------------------
-pc_reg: 0x00000370
+pc_reg: 0x00000408
 inst: 0x00100193
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -3034,9 +3450,9 @@ dmem.addr:           1
 wb_data: 0x00000001
 dmem.wen:  0
 dmem.wdata: 0x00ff00ff
-gp :          14
+gp :          25
 -----------------------------------------------------------
-pc_reg: 0x00000374
+pc_reg: 0x0000040c
 inst: 0x05d00893
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -3049,7 +3465,7 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           1
 -----------------------------------------------------------
-pc_reg: 0x00000378
+pc_reg: 0x00000410
 inst: 0x00000513
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -3062,7 +3478,7 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           1
 -----------------------------------------------------------
-pc_reg: 0x0000037c
+pc_reg: 0x00000414
 inst: 0x00000073
 rs1_addr:   0
 rs1_data: 0x00000000
@@ -3205,13 +3621,13 @@ dmem.wen:  0
 dmem.wdata: 0x00000000
 gp :           1
 -----------------------------------------------------------
-test Top Success: 0 tests passed in 247 cycles in 4.723646 seconds 52.29 Hz
+test Top Success: 0 tests passed in 279 cycles in 5.509131 seconds 50.64 Hz
 [info] RiscvTest:
 [info] mycpu
 [info] - should work through hex
-[info] Run completed in 19 seconds, 568 milliseconds.
+[info] Run completed in 20 seconds, 701 milliseconds.
 [info] Total number of tests run: 1
 [info] Suites: completed 1, aborted 0
 [info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
 [info] All tests passed.
-[success] Total time: 38 s, completed Sep 29, 2021, 12:27:01 PM
+[success] Total time: 37 s, completed Sep 29, 2021, 12:37:42 PM
