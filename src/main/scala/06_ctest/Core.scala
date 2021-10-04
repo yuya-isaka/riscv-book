@@ -256,7 +256,7 @@ class Core extends Module {
 	// 終了判定 -----------------------------------------------------
 
 	// io.exit := (pc_reg === 0x44.U(WORD_LEN.W))
-	io.exit := (inst === UNIMP)
+	io.exit := (inst === UNIMP) // unimplementationの略（今回の実装ではCSR命令についてやってないから，これを終了条件とする．）
 
 	// デバッグ -----------------------------------------------------
 
