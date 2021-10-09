@@ -241,7 +241,7 @@ class Core extends Module {
 	// CSR命令の時はCSR読み出しデータをWB (書き込みデータではない)
 	val wb_data = MuxCase(alu_out, Seq(
 		(wb_sel === WB_MEM) -> io.dmem.rdata,
-		(wb_sel === WB_PC) -> pc_plus4,
+		(wb_sel === WB_PC) 	-> pc_plus4,
 		(wb_sel === WB_CSR) -> csr_rdata,
 	))
 
