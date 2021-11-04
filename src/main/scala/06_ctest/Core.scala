@@ -16,39 +16,39 @@ class Core extends Module {
 
 	// 入出力
 	val io = IO(new Bundle {
-		val imem: ImemPortIo = Flipped(new ImemPortIo())
-		val dmem: DmemPortIo = Flipped(new DmemPortIo())
+		val imem = Flipped(new ImemPortIo())
+		val dmem = Flipped(new DmemPortIo())
 
-		val exit: Bool = Output(Bool())
-		val gp: UInt = Output(UInt(WORD_LEN.W))
+		val exit = Output(Bool())
+		val gp = Output(UInt(WORD_LEN.W))
 	})
 
 	// レジスタ実体
-	val regfile: Mem[UInt] = Mem(32, UInt(WORD_LEN.W)) // 複数のレジスタはこれで作る
-	val csr_regfile: Mem[UInt] = Mem(4096, UInt(WORD_LEN.W))
+	val regfile = Mem(32, UInt(WORD_LEN.W)) // 複数のレジスタはこれで作る
+	val csr_regfile = Mem(4096, UInt(WORD_LEN.W))
 
 	io.gp := regfile(3) // グローバルポインタ
 
 	// IF -----------------------------------------------------
 
 	// プログラムカウンタ
-	val pc_reg: UInt = RegInit(START_ADDR) // 単体のレジスタはこれで作る
+	val pc_reg = RegInit(START_ADDR) // 単体のレジスタはこれで作る
 	// pc_reg := pc_reg + 4.U(WORD_LEN.W)
-	val pc_plus4: UInt = pc_reg + 4.U(WORD_LEN.W)
+	val pc_plus4 = pc_reg + 4.U(WORD_LEN.W)
 
 	// Wireで宣言のみ
-	val br_flg: Bool = Wire(Bool())
-	val br_target: UInt = Wire(UInt(WORD_LEN.W))
+	val br_flg = Wire(Bool())
+	val br_target = Wire(UInt(WORD_LEN.W))
 
 
 	// メモリから命令を受け取る
 	io.imem.addr := pc_reg
-	val inst: UInt = io.imem.inst
+	val inst = io.imem.inst
 
-	val jmp_flg: Bool = (inst === JAL || inst === JALR)
-	val alu_out: UInt = Wire(UInt(WORD_LEN.W))
+	val jmp_flg = (inst === JAL || inst === JALR)
+	val alu_out = Wire(UInt(WORD_LEN.W))
 
-	val pc_next: UInt = MuxCase(pc_plus4, Seq(
+	val pc_next = MuxCase(pc_plus4, Seq(
 		br_flg 				-> br_target,
 		jmp_flg 			-> alu_out,
 		(inst === ECALL) 	-> csr_regfile(0x305) // 0x305:mtvecにはtrap_vectorアドレスが格納されている
