@@ -90,7 +90,7 @@ class Core extends Module {
 	val imm_z = inst(19, 15)
 	val imm_z_uext = Cat(Fill(27, 0.U), imm_z)
 
-	// 演算内容，　オペランド１，　オペランド２，　メモリストアか否か，　WBするか否か，　WBのデータはどれ？
+	// 演算内容，　オペランド１，　オペランド２，　メモリストアか否か，　WBするか否か，　WBのデータはどれ？, CSR
 	val csignals = ListLookup(inst,
 			List(ALU_X, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
 		Array(
@@ -114,7 +114,7 @@ class Core extends Module {
 			SLT 	-> List(ALU_SLT, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
 			SLTU 	-> List(ALU_SLTU, OP1_RS1, OP2_RS2, MEN_X, REN_S, WB_ALU, CSR_X),
 			SLTI 	-> List(ALU_SLT, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
-			SLTIU -> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
+			SLTIU 	-> List(ALU_SLTU, OP1_RS1, OP2_IMI, MEN_X, REN_S, WB_ALU, CSR_X),
 			BEQ 	-> List(BR_BEQ, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
 			BNE 	-> List(BR_BNE, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
 			BLT 	-> List(BR_BLT, OP1_RS1, OP2_RS2, MEN_X, REN_X, WB_X, CSR_X),
@@ -139,7 +139,8 @@ class Core extends Module {
 
 	val op1_data = MuxCase(0.U(WORD_LEN.W), Seq(
 		(op1_sel === OP1_RS1) -> rs1_data,
-		(op1_sel === OP1_PC) -> pc_reg
+		(op1_sel === OP1_PC) -> pc_reg,
+		(op1_sel === OP1_IMZ) -> imm_z_uext
 	))
 
 	val op2_data = MuxCase(0.U(WORD_LEN.W), Seq(
@@ -240,7 +241,8 @@ class Core extends Module {
 	// ジャンプ命令の時はプログラムカウンタをWB(リターンアドレス)
 	// CSR命令の時はCSR読み出しデータをWB (書き込みデータではない)
 	val wb_data = MuxCase(alu_out, Seq(
-		(wb_sel === WB_MEM) -> io.dmem.rdata,
+		// 本来はWB_ALUもあるがそれはWBしないから入れてない
+		(wb_sel === WB_MEM) -> io.dmem.rdata, // LW命令
 		(wb_sel === WB_PC) 	-> pc_plus4,
 		(wb_sel === WB_CSR) -> csr_rdata,
 	))
@@ -250,6 +252,7 @@ class Core extends Module {
 	// 	regfile(wb_addr) := wb_data
 	// }
 	when(rf_wen === REN_S) {
+		// wb_addr = rdレジスタ
 		regfile(wb_addr) := wb_data
 	}
 

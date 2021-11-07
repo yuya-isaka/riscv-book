@@ -4,7 +4,6 @@
 package common
 
 import chisel3._
-import chisel3.util._
 
 object Consts {
   val WORD_LEN      = 32
@@ -67,6 +66,7 @@ object Consts {
   val REN_S   = 1.U(REN_LEN.W) // スカラ命令用
   val REN_V   = 2.U(REN_LEN.W) // ベクトル命令用
 
+// 8個用意したいから3bitの幅
   val WB_SEL_LEN = 3
   val WB_X       = 0.U(WB_SEL_LEN.W)
   val WB_ALU     = 0.U(WB_SEL_LEN.W)
