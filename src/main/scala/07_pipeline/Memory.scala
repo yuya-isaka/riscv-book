@@ -28,7 +28,7 @@ class Memory extends Module {
     val dmem = new DmemPortIo()
   })
 
-  val mem = Mem(16384, UInt(8.W))
+  val mem = Mem(16384, UInt(8.W)) //実際のコンピュータアーキテクチャにおける一つの番地につき１バイトっていうのを実現するためにこうした -> そうことで，PCを４ずつカウントアップできる
   loadMemoryFromFile(mem, "src/hex/ctest.hex")
 
   io.imem.inst := Cat(
