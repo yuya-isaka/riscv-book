@@ -1,4 +1,4 @@
-package pipeline_datahazard
+package pipeline_datahazard2
 
 import org.scalatest._
 import chiseltest._
