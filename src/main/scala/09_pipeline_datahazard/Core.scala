@@ -114,12 +114,12 @@ class Core extends Module {
 	val id_rs1_data = MuxCase(regfile(id_rs1_addr), Seq(
 		(id_rs1_addr === 0.U) 												-> 0.U(WORD_LEN.W),
 		((id_rs1_addr === mem_reg_wb_addr) && (mem_reg_rf_wen === REN_S)) 	-> mem_wb_data,		// MEMからフォワーディング
-		((id_rs1_addr === wb_reg_wb_addr) && (mem_reg_rf_wen === REN_S)) 	-> wb_reg_wb_data	// WBからフォワーディング
+		((id_rs1_addr === wb_reg_wb_addr) && (wb_reg_rf_wen === REN_S)) 	-> wb_reg_wb_data	// WBからフォワーディング
 	))
 	val id_rs2_data = MuxCase(regfile(id_rs2_addr), Seq(
 		(id_rs2_addr === 0.U) 												-> 0.U(WORD_LEN.W),
 		((id_rs2_addr === mem_reg_wb_addr) && (mem_reg_rf_wen === REN_S)) 	-> mem_wb_data,		// MEMからフォワーディング
-		((id_rs2_addr === wb_reg_wb_addr) && (mem_reg_rf_wen === REN_S)) 	-> wb_reg_wb_data	// WBからフォワーディング
+		((id_rs2_addr === wb_reg_wb_addr) && (wb_reg_rf_wen === REN_S)) 	-> wb_reg_wb_data	// WBからフォワーディング
 	))
 
 	// val id_rs1_data = Mux((id_rs1_addr =/= 0.U(WORD_LEN.U)), regfile(id_rs1_addr), 0.U(WORD_LEN.W))
