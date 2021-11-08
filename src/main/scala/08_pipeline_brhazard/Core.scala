@@ -1,4 +1,4 @@
-package pipeline
+package pipeline_brhazard
 
 import chisel3._
 import chisel3.util._
@@ -61,7 +61,7 @@ class Core extends Module {
 	// IF -----------------------------------------------------
 
 	val if_reg_pc 	= RegInit(START_ADDR)
-	io.imem.addr 	= if_reg_pc
+	io.imem.addr 	:= if_reg_pc
 	val if_inst 	= io.imem.inst
 
 	val exe_br_flg 		= Wire(Bool())
@@ -76,7 +76,7 @@ class Core extends Module {
 		exe_jmp_flg 			-> exe_alu_out,
 		(if_inst === ECALL) 	-> csr_regfile(0x305)
 	))
-	if_pc_reg := pc_next
+	if_reg_pc := pc_next
 
 	// IF/ID -------------------------------------------------
 
@@ -93,8 +93,8 @@ class Core extends Module {
 	val id_rs2_addr = id_inst(24, 20)
 	val id_wb_addr  = id_inst(11, 7)
 
-	val id_rs1_data = Mux((id_rs1_addr =/= 0.U(WORD_LEN.U)), regfile(rs1_addr), 0.U(WORD_LEN.W))
-	val id_rs2_data = Mux((id_rs2_addr =/= 0.U(WORD_LEN.U)), regfile(rs2_addr), 0.U(WORD_LEN.W))
+	val id_rs1_data = Mux((id_rs1_addr =/= 0.U(WORD_LEN.U)), regfile(id_rs1_addr), 0.U(WORD_LEN.W))
+	val id_rs2_data = Mux((id_rs2_addr =/= 0.U(WORD_LEN.U)), regfile(id_rs2_addr), 0.U(WORD_LEN.W))
 
 	val imm_i 			= id_inst(31, 20)
 	val id_imm_i_sext 	= Cat(Fill(20, imm_i(11)), imm_i)
@@ -187,7 +187,7 @@ class Core extends Module {
 	exe_reg_imm_s_sext 		:= id_imm_s_sext		// n
 	exe_reg_imm_b_sext 		:= id_imm_b_sext		// n
 	exe_reg_imm_u_shifted 	:= id_imm_u_shifted		// n
-	exe_reg_imm_z_uxet 		:= id_imm_z_uext		// n
+	exe_reg_imm_z_uext 		:= id_imm_z_uext		// n
 	exe_reg_wb_addr 		:= id_wb_addr			// n
 	exe_reg_exe_fun 		:= id_exe_fun			// n
 	exe_reg_mem_wen 		:= id_mem_wen			// n
