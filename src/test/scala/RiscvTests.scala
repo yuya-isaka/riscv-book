@@ -1,4 +1,4 @@
-package riscvtests
+package pipeline_datahazard
 
 import org.scalatest._
 import chiseltest._

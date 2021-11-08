@@ -1,0 +1,7 @@
+make br_hazard
+
+最適化オプション -O2
+これがないとローカル変数のスタックへの退避・復帰関連の本来不要なロードストア命令が残ったままとなり，ディスアセンブル結果の可読性が低下する．
+
+cd /src/chisel-template
+sbt "testOnly パッケージ名.HexTest"
