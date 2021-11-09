@@ -5,3 +5,6 @@ make br_hazard
 
 cd /src/chisel-template
 sbt "testOnly パッケージ名.HexTest"
+
+cd /src/chisel-template/src/shell
+./riscv_tests.sh pipeline_datahazard2 09_pipeline_datahazard_2

@@ -41,7 +41,7 @@ class Memory extends Module {
   instFetchedAddr := instFetchingAddr
 
   val mem = Mem(16384, UInt(8.W))
-  loadMemoryFromFile(mem, "src/riscv/rv32ui-p-sub.hex")
+  loadMemoryFromFile(mem, "src/riscv/rv32ui-p-addi.hex")
   instData := Cat(
     mem(io.imem.addr + 3.U(WORD_LEN.W)), 
     mem(io.imem.addr + 2.U(WORD_LEN.W)),

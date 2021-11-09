@@ -10551,13 +10551,13 @@ mem_wb_data      : 0x00000048
 wb_reg_wb_data   : 0x00001000
 io.gp   :           1
 ---------
-test Top Success: 0 tests passed in 660 cycles in 12.671529 seconds 52.09 Hz
+test Top Success: 0 tests passed in 660 cycles in 22.005207 seconds 29.99 Hz
 [info] RiscvTest:
 [info] mycpu
 [info] - should work through hex
-[info] Run completed in 28 seconds, 42 milliseconds.
+[info] Run completed in 49 seconds, 963 milliseconds.
 [info] Total number of tests run: 1
 [info] Suites: completed 1, aborted 0
 [info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
 [info] All tests passed.
-[success] Total time: 45 s, completed Nov 8, 2021, 12:36:39 PM
+[success] Total time: 74 s (01:14), completed Nov 9, 2021, 11:26:59 AM

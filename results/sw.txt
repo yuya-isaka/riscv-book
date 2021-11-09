@@ -3,7 +3,7 @@
 [info] loading project definition from /src/chisel-template/project
 [info] loading settings for project root from build.sbt ...
 [info] set current project to %NAME% (in build file:/src/chisel-template/)
-[info] compiling 2 Scala sources to /src/chisel-template/target/scala-2.12/classes ...
+[info] compiling 1 Scala source to /src/chisel-template/target/scala-2.12/classes ...
 [info] done compiling
 Elaborating design...
 Done elaborating.
@@ -1635,8 +1635,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x00aa0000
 exe_alu_out      : 0x00aa0000
 mem_reg_pc       : 0x00000188
-mem_wb_data      : 0x00aa00aa
+mem_wb_data      : 0x00000000
 wb_reg_wb_data   : 0x00002000
+io.gp   :           0
+---------
+if_reg_pc        : 0x00000194
+id_reg_pc        : 0x00000190
+id_reg_inst      : 0x0aa38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000018c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x00aa0000
+exe_alu_out      : 0x00aa0000
+mem_reg_pc       : 0x00000188
+mem_wb_data      : 0x00aa00aa
+wb_reg_wb_data   : 0x00000000
 io.gp   :           0
 ---------
 if_reg_pc        : 0x00000194
@@ -1875,8 +1891,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xaa00b000
 exe_alu_out      : 0xaa00b000
 mem_reg_pc       : 0x000001b0
-mem_wb_data      : 0xaa00aa00
+mem_wb_data      : 0x00aa00aa
 wb_reg_wb_data   : 0x00002004
+io.gp   :           2
+---------
+if_reg_pc        : 0x000001bc
+id_reg_pc        : 0x000001b8
+id_reg_inst      : 0xa0038393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000001b4
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xaa00b000
+exe_alu_out      : 0xaa00b000
+mem_reg_pc       : 0x000001b0
+mem_wb_data      : 0xaa00aa00
+wb_reg_wb_data   : 0x00aa00aa
 io.gp   :           2
 ---------
 if_reg_pc        : 0x000001bc
@@ -2099,8 +2131,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x0aa01000
 exe_alu_out      : 0x0aa01000
 mem_reg_pc       : 0x000001d8
-mem_wb_data      : 0x0aa00aa0
+mem_wb_data      : 0xaa00aa00
 wb_reg_wb_data   : 0x00002008
+io.gp   :           3
+---------
+if_reg_pc        : 0x000001e4
+id_reg_pc        : 0x000001e0
+id_reg_inst      : 0xaa038393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000001dc
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x0aa01000
+exe_alu_out      : 0x0aa01000
+mem_reg_pc       : 0x000001d8
+mem_wb_data      : 0x0aa00aa0
+wb_reg_wb_data   : 0xaa00aa00
 io.gp   :           3
 ---------
 if_reg_pc        : 0x000001e4
@@ -2323,8 +2371,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xa00aa000
 exe_alu_out      : 0xa00aa000
 mem_reg_pc       : 0x00000200
-mem_wb_data      : 0xa00aa00a
+mem_wb_data      : 0x0aa00aa0
 wb_reg_wb_data   : 0x0000200c
+io.gp   :           4
+---------
+if_reg_pc        : 0x0000020c
+id_reg_pc        : 0x00000208
+id_reg_inst      : 0x00a38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000204
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xa00aa000
+exe_alu_out      : 0xa00aa000
+mem_reg_pc       : 0x00000200
+mem_wb_data      : 0xa00aa00a
+wb_reg_wb_data   : 0x0aa00aa0
 io.gp   :           4
 ---------
 if_reg_pc        : 0x0000020c
@@ -2547,8 +2611,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x00aa0000
 exe_alu_out      : 0x00aa0000
 mem_reg_pc       : 0x00000228
-mem_wb_data      : 0x00aa00aa
+mem_wb_data      : 0xa00aa00a
 wb_reg_wb_data   : 0x00002010
+io.gp   :           5
+---------
+if_reg_pc        : 0x00000234
+id_reg_pc        : 0x00000230
+id_reg_inst      : 0x0aa38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000022c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x00aa0000
+exe_alu_out      : 0x00aa0000
+mem_reg_pc       : 0x00000228
+mem_wb_data      : 0x00aa00aa
+wb_reg_wb_data   : 0xa00aa00a
 io.gp   :           5
 ---------
 if_reg_pc        : 0x00000234
@@ -2787,8 +2867,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xaa00b000
 exe_alu_out      : 0xaa00b000
 mem_reg_pc       : 0x00000250
-mem_wb_data      : 0xaa00aa00
+mem_wb_data      : 0x00aa00aa
 wb_reg_wb_data   : 0x00002014
+io.gp   :           6
+---------
+if_reg_pc        : 0x0000025c
+id_reg_pc        : 0x00000258
+id_reg_inst      : 0xa0038393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000254
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xaa00b000
+exe_alu_out      : 0xaa00b000
+mem_reg_pc       : 0x00000250
+mem_wb_data      : 0xaa00aa00
+wb_reg_wb_data   : 0x00aa00aa
 io.gp   :           6
 ---------
 if_reg_pc        : 0x0000025c
@@ -3027,8 +3123,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x0aa01000
 exe_alu_out      : 0x0aa01000
 mem_reg_pc       : 0x00000278
-mem_wb_data      : 0x0aa00aa0
+mem_wb_data      : 0xaa00aa00
 wb_reg_wb_data   : 0x00002018
+io.gp   :           7
+---------
+if_reg_pc        : 0x00000284
+id_reg_pc        : 0x00000280
+id_reg_inst      : 0xaa038393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000027c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x0aa01000
+exe_alu_out      : 0x0aa01000
+mem_reg_pc       : 0x00000278
+mem_wb_data      : 0x0aa00aa0
+wb_reg_wb_data   : 0xaa00aa00
 io.gp   :           7
 ---------
 if_reg_pc        : 0x00000284
@@ -3251,8 +3363,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xa00aa000
 exe_alu_out      : 0xa00aa000
 mem_reg_pc       : 0x000002a0
-mem_wb_data      : 0xa00aa00a
+mem_wb_data      : 0x0aa00aa0
 wb_reg_wb_data   : 0x0000201c
+io.gp   :           8
+---------
+if_reg_pc        : 0x000002ac
+id_reg_pc        : 0x000002a8
+id_reg_inst      : 0x00a38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000002a4
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xa00aa000
+exe_alu_out      : 0xa00aa000
+mem_reg_pc       : 0x000002a0
+mem_wb_data      : 0xa00aa00a
+wb_reg_wb_data   : 0x0aa00aa0
 io.gp   :           8
 ---------
 if_reg_pc        : 0x000002ac
@@ -3491,8 +3619,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x12345000
 exe_alu_out      : 0x12345000
 mem_reg_pc       : 0x000002cc
-mem_wb_data      : 0x12345678
+mem_wb_data      : 0xa00aa00a
 wb_reg_wb_data   : 0x00002020
+io.gp   :           9
+---------
+if_reg_pc        : 0x000002d8
+id_reg_pc        : 0x000002d4
+id_reg_inst      : 0x67838393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000002d0
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x12345000
+exe_alu_out      : 0x12345000
+mem_reg_pc       : 0x000002cc
+mem_wb_data      : 0x12345678
+wb_reg_wb_data   : 0xa00aa00a
 io.gp   :           9
 ---------
 if_reg_pc        : 0x000002d8
@@ -3795,8 +3939,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x58213000
 exe_alu_out      : 0x58213000
 mem_reg_pc       : 0x00000300
-mem_wb_data      : 0x58213098
+mem_wb_data      : 0x12345678
 wb_reg_wb_data   : 0x00000000
+io.gp   :          10
+---------
+if_reg_pc        : 0x0000030c
+id_reg_pc        : 0x00000308
+id_reg_inst      : 0x09838393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000304
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x58213000
+exe_alu_out      : 0x58213000
+mem_reg_pc       : 0x00000300
+mem_wb_data      : 0x58213098
+wb_reg_wb_data   : 0x12345678
 io.gp   :          10
 ---------
 if_reg_pc        : 0x0000030c
@@ -4051,8 +4211,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xaabbd000
 exe_alu_out      : 0xaabbd000
 mem_reg_pc       : 0x00000330
-mem_wb_data      : 0xaabbccdd
+mem_wb_data      : 0x58213098
 wb_reg_wb_data   : 0x00002000
+io.gp   :          12
+---------
+if_reg_pc        : 0x0000033c
+id_reg_pc        : 0x00000338
+id_reg_inst      : 0xcdd38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000334
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xaabbd000
+exe_alu_out      : 0xaabbd000
+mem_reg_pc       : 0x00000330
+mem_wb_data      : 0xaabbccdd
+wb_reg_wb_data   : 0x58213098
 io.gp   :          12
 ---------
 if_reg_pc        : 0x0000033c
@@ -4378,6 +4554,22 @@ io.gp   :          12
 if_reg_pc        : 0x0000033c
 id_reg_pc        : 0x00000338
 id_reg_inst      : 0xcdd38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000334
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xaabbd000
+exe_alu_out      : 0xaabbd000
+mem_reg_pc       : 0x00000330
+mem_wb_data      : 0xaabbccdd
+wb_reg_wb_data   : 0xaabbccdd
+io.gp   :          12
+---------
+if_reg_pc        : 0x0000033c
+id_reg_pc        : 0x00000338
+id_reg_inst      : 0xcdd38393
 stall_flg        : 0x0
 id_inst          : 0xcdd38393
 id_rs1_data      : 0xaabbd000
@@ -4691,8 +4883,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xdaabc000
 exe_alu_out      : 0xdaabc000
 mem_reg_pc       : 0x0000036c
-mem_wb_data      : 0xdaabbccd
+mem_wb_data      : 0xaabbccdd
 wb_reg_wb_data   : 0x00002004
+io.gp   :          13
+---------
+if_reg_pc        : 0x00000378
+id_reg_pc        : 0x00000374
+id_reg_inst      : 0xccd38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000370
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xdaabc000
+exe_alu_out      : 0xdaabc000
+mem_reg_pc       : 0x0000036c
+mem_wb_data      : 0xdaabbccd
+wb_reg_wb_data   : 0xaabbccdd
 io.gp   :          13
 ---------
 if_reg_pc        : 0x00000378
@@ -5013,6 +5221,22 @@ exe_alu_out      : 0xdaabc000
 mem_reg_pc       : 0x0000036c
 mem_wb_data      : 0xdaabbccd
 wb_reg_wb_data   : 0x00002004
+io.gp   :          13
+---------
+if_reg_pc        : 0x00000378
+id_reg_pc        : 0x00000374
+id_reg_inst      : 0xccd38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000370
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xdaabc000
+exe_alu_out      : 0xdaabc000
+mem_reg_pc       : 0x0000036c
+mem_wb_data      : 0xdaabbccd
+wb_reg_wb_data   : 0xdaabbccd
 io.gp   :          13
 ---------
 if_reg_pc        : 0x00000378
@@ -5347,8 +5571,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xddaac000
 exe_alu_out      : 0xddaac000
 mem_reg_pc       : 0x000003ac
-mem_wb_data      : 0xddaabbcc
+mem_wb_data      : 0xdaabbccd
 wb_reg_wb_data   : 0x00002008
+io.gp   :          14
+---------
+if_reg_pc        : 0x000003b8
+id_reg_pc        : 0x000003b4
+id_reg_inst      : 0xbcc38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000003b0
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xddaac000
+exe_alu_out      : 0xddaac000
+mem_reg_pc       : 0x000003ac
+mem_wb_data      : 0xddaabbcc
+wb_reg_wb_data   : 0xdaabbccd
 io.gp   :          14
 ---------
 if_reg_pc        : 0x000003b8
@@ -5690,6 +5930,22 @@ io.gp   :          14
 if_reg_pc        : 0x000003b8
 id_reg_pc        : 0x000003b4
 id_reg_inst      : 0xbcc38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000003b0
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xddaac000
+exe_alu_out      : 0xddaac000
+mem_reg_pc       : 0x000003ac
+mem_wb_data      : 0xddaabbcc
+wb_reg_wb_data   : 0xddaabbcc
+io.gp   :          14
+---------
+if_reg_pc        : 0x000003b8
+id_reg_pc        : 0x000003b4
+id_reg_inst      : 0xbcc38393
 stall_flg        : 0x0
 id_inst          : 0xbcc38393
 id_rs1_data      : 0xddaac000
@@ -6019,8 +6275,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xcddab000
 exe_alu_out      : 0xcddab000
 mem_reg_pc       : 0x000003e8
-mem_wb_data      : 0xcddaabbc
+mem_wb_data      : 0xddaabbcc
 wb_reg_wb_data   : 0x0000200c
+io.gp   :          15
+---------
+if_reg_pc        : 0x000003f4
+id_reg_pc        : 0x000003f0
+id_reg_inst      : 0xbbc38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000003ec
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xcddab000
+exe_alu_out      : 0xcddab000
+mem_reg_pc       : 0x000003e8
+mem_wb_data      : 0xcddaabbc
+wb_reg_wb_data   : 0xddaabbcc
 io.gp   :          15
 ---------
 if_reg_pc        : 0x000003f4
@@ -6362,6 +6634,22 @@ io.gp   :          15
 if_reg_pc        : 0x000003f4
 id_reg_pc        : 0x000003f0
 id_reg_inst      : 0xbbc38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000003ec
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xcddab000
+exe_alu_out      : 0xcddab000
+mem_reg_pc       : 0x000003e8
+mem_wb_data      : 0xcddaabbc
+wb_reg_wb_data   : 0xcddaabbc
+io.gp   :          15
+---------
+if_reg_pc        : 0x000003f4
+id_reg_pc        : 0x000003f0
+id_reg_inst      : 0xbbc38393
 stall_flg        : 0x0
 id_inst          : 0xbbc38393
 id_rs1_data      : 0xcddab000
@@ -6691,8 +6979,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xccddb000
 exe_alu_out      : 0xccddb000
 mem_reg_pc       : 0x00000428
-mem_wb_data      : 0xccddaabb
+mem_wb_data      : 0xcddaabbc
 wb_reg_wb_data   : 0x00002010
+io.gp   :          16
+---------
+if_reg_pc        : 0x00000434
+id_reg_pc        : 0x00000430
+id_reg_inst      : 0xabb38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000042c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xccddb000
+exe_alu_out      : 0xccddb000
+mem_reg_pc       : 0x00000428
+mem_wb_data      : 0xccddaabb
+wb_reg_wb_data   : 0xcddaabbc
 io.gp   :          16
 ---------
 if_reg_pc        : 0x00000434
@@ -7029,6 +7333,22 @@ exe_alu_out      : 0xccddb000
 mem_reg_pc       : 0x00000428
 mem_wb_data      : 0xccddaabb
 wb_reg_wb_data   : 0x00002010
+io.gp   :          16
+---------
+if_reg_pc        : 0x00000434
+id_reg_pc        : 0x00000430
+id_reg_inst      : 0xabb38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000042c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xccddb000
+exe_alu_out      : 0xccddb000
+mem_reg_pc       : 0x00000428
+mem_wb_data      : 0xccddaabb
+wb_reg_wb_data   : 0xccddaabb
 io.gp   :          16
 ---------
 if_reg_pc        : 0x00000434
@@ -7379,8 +7699,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0xbccde000
 exe_alu_out      : 0xbccde000
 mem_reg_pc       : 0x00000468
-mem_wb_data      : 0xbccddaab
+mem_wb_data      : 0xccddaabb
 wb_reg_wb_data   : 0x00002014
+io.gp   :          17
+---------
+if_reg_pc        : 0x00000474
+id_reg_pc        : 0x00000470
+id_reg_inst      : 0xaab38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000046c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xbccde000
+exe_alu_out      : 0xbccde000
+mem_reg_pc       : 0x00000468
+mem_wb_data      : 0xbccddaab
+wb_reg_wb_data   : 0xccddaabb
 io.gp   :          17
 ---------
 if_reg_pc        : 0x00000474
@@ -7738,6 +8074,22 @@ io.gp   :          17
 if_reg_pc        : 0x00000474
 id_reg_pc        : 0x00000470
 id_reg_inst      : 0xaab38393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000046c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0xbccde000
+exe_alu_out      : 0xbccde000
+mem_reg_pc       : 0x00000468
+mem_wb_data      : 0xbccddaab
+wb_reg_wb_data   : 0xbccddaab
+io.gp   :          17
+---------
+if_reg_pc        : 0x00000474
+id_reg_pc        : 0x00000470
+id_reg_inst      : 0xaab38393
 stall_flg        : 0x0
 id_inst          : 0xaab38393
 id_rs1_data      : 0xbccde000
@@ -8067,8 +8419,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x00112000
 exe_alu_out      : 0x00112000
 mem_reg_pc       : 0x000004a0
-mem_wb_data      : 0x00112233
+mem_wb_data      : 0xbccddaab
 wb_reg_wb_data   : 0x00002000
+io.gp   :          18
+---------
+if_reg_pc        : 0x000004ac
+id_reg_pc        : 0x000004a8
+id_reg_inst      : 0x23338393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000004a4
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x00112000
+exe_alu_out      : 0x00112000
+mem_reg_pc       : 0x000004a0
+mem_wb_data      : 0x00112233
+wb_reg_wb_data   : 0xbccddaab
 io.gp   :          18
 ---------
 if_reg_pc        : 0x000004ac
@@ -8410,6 +8778,22 @@ io.gp   :          18
 if_reg_pc        : 0x000004ac
 id_reg_pc        : 0x000004a8
 id_reg_inst      : 0x23338393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000004a4
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x00112000
+exe_alu_out      : 0x00112000
+mem_reg_pc       : 0x000004a0
+mem_wb_data      : 0x00112233
+wb_reg_wb_data   : 0x00112233
+io.gp   :          18
+---------
+if_reg_pc        : 0x000004ac
+id_reg_pc        : 0x000004a8
+id_reg_inst      : 0x23338393
 stall_flg        : 0x0
 id_inst          : 0x23338393
 id_rs1_data      : 0x00112000
@@ -8739,8 +9123,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x30011000
 exe_alu_out      : 0x30011000
 mem_reg_pc       : 0x000004dc
-mem_wb_data      : 0x30011223
+mem_wb_data      : 0x00112233
 wb_reg_wb_data   : 0x00002004
+io.gp   :          19
+---------
+if_reg_pc        : 0x000004e8
+id_reg_pc        : 0x000004e4
+id_reg_inst      : 0x22338393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000004e0
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x30011000
+exe_alu_out      : 0x30011000
+mem_reg_pc       : 0x000004dc
+mem_wb_data      : 0x30011223
+wb_reg_wb_data   : 0x00112233
 io.gp   :          19
 ---------
 if_reg_pc        : 0x000004e8
@@ -9082,6 +9482,22 @@ io.gp   :          19
 if_reg_pc        : 0x000004e8
 id_reg_pc        : 0x000004e4
 id_reg_inst      : 0x22338393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000004e0
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x30011000
+exe_alu_out      : 0x30011000
+mem_reg_pc       : 0x000004dc
+mem_wb_data      : 0x30011223
+wb_reg_wb_data   : 0x30011223
+io.gp   :          19
+---------
+if_reg_pc        : 0x000004e8
+id_reg_pc        : 0x000004e4
+id_reg_inst      : 0x22338393
 stall_flg        : 0x0
 id_inst          : 0x22338393
 id_rs1_data      : 0x30011000
@@ -9411,8 +9827,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x33001000
 exe_alu_out      : 0x33001000
 mem_reg_pc       : 0x0000051c
-mem_wb_data      : 0x33001122
+mem_wb_data      : 0x30011223
 wb_reg_wb_data   : 0x00002008
+io.gp   :          20
+---------
+if_reg_pc        : 0x00000528
+id_reg_pc        : 0x00000524
+id_reg_inst      : 0x12238393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000520
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x33001000
+exe_alu_out      : 0x33001000
+mem_reg_pc       : 0x0000051c
+mem_wb_data      : 0x33001122
+wb_reg_wb_data   : 0x30011223
 io.gp   :          20
 ---------
 if_reg_pc        : 0x00000528
@@ -9749,6 +10181,22 @@ exe_alu_out      : 0x33001000
 mem_reg_pc       : 0x0000051c
 mem_wb_data      : 0x33001122
 wb_reg_wb_data   : 0x00002008
+io.gp   :          20
+---------
+if_reg_pc        : 0x00000528
+id_reg_pc        : 0x00000524
+id_reg_inst      : 0x12238393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x00000520
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x33001000
+exe_alu_out      : 0x33001000
+mem_reg_pc       : 0x0000051c
+mem_wb_data      : 0x33001122
+wb_reg_wb_data   : 0x33001122
 io.gp   :          20
 ---------
 if_reg_pc        : 0x00000528
@@ -10083,8 +10531,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x23300000
 exe_alu_out      : 0x23300000
 mem_reg_pc       : 0x00000558
-mem_wb_data      : 0x23300112
+mem_wb_data      : 0x33001122
 wb_reg_wb_data   : 0x0000200c
+io.gp   :          21
+---------
+if_reg_pc        : 0x00000564
+id_reg_pc        : 0x00000560
+id_reg_inst      : 0x11238393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000055c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x23300000
+exe_alu_out      : 0x23300000
+mem_reg_pc       : 0x00000558
+mem_wb_data      : 0x23300112
+wb_reg_wb_data   : 0x33001122
 io.gp   :          21
 ---------
 if_reg_pc        : 0x00000564
@@ -10426,6 +10890,22 @@ io.gp   :          21
 if_reg_pc        : 0x00000564
 id_reg_pc        : 0x00000560
 id_reg_inst      : 0x11238393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000055c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x23300000
+exe_alu_out      : 0x23300000
+mem_reg_pc       : 0x00000558
+mem_wb_data      : 0x23300112
+wb_reg_wb_data   : 0x23300112
+io.gp   :          21
+---------
+if_reg_pc        : 0x00000564
+id_reg_pc        : 0x00000560
+id_reg_inst      : 0x11238393
 stall_flg        : 0x0
 id_inst          : 0x11238393
 id_rs1_data      : 0x23300000
@@ -10755,8 +11235,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x22330000
 exe_alu_out      : 0x22330000
 mem_reg_pc       : 0x00000598
-mem_wb_data      : 0x22330011
+mem_wb_data      : 0x23300112
 wb_reg_wb_data   : 0x00002010
+io.gp   :          22
+---------
+if_reg_pc        : 0x000005a4
+id_reg_pc        : 0x000005a0
+id_reg_inst      : 0x01138393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000059c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x22330000
+exe_alu_out      : 0x22330000
+mem_reg_pc       : 0x00000598
+mem_wb_data      : 0x22330011
+wb_reg_wb_data   : 0x23300112
 io.gp   :          22
 ---------
 if_reg_pc        : 0x000005a4
@@ -11093,6 +11589,22 @@ exe_alu_out      : 0x22330000
 mem_reg_pc       : 0x00000598
 mem_wb_data      : 0x22330011
 wb_reg_wb_data   : 0x00002010
+io.gp   :          22
+---------
+if_reg_pc        : 0x000005a4
+id_reg_pc        : 0x000005a0
+id_reg_inst      : 0x01138393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x0000059c
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x22330000
+exe_alu_out      : 0x22330000
+mem_reg_pc       : 0x00000598
+mem_wb_data      : 0x22330011
+wb_reg_wb_data   : 0x22330011
 io.gp   :          22
 ---------
 if_reg_pc        : 0x000005a4
@@ -11443,8 +11955,24 @@ exe_reg_op1_data : 0x00000000
 exe_reg_op2_data : 0x12233000
 exe_alu_out      : 0x12233000
 mem_reg_pc       : 0x000005d8
-mem_wb_data      : 0x12233001
+mem_wb_data      : 0x22330011
 wb_reg_wb_data   : 0x00002014
+io.gp   :          23
+---------
+if_reg_pc        : 0x000005e4
+id_reg_pc        : 0x000005e0
+id_reg_inst      : 0x00138393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000005dc
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x12233000
+exe_alu_out      : 0x12233000
+mem_reg_pc       : 0x000005d8
+mem_wb_data      : 0x12233001
+wb_reg_wb_data   : 0x22330011
 io.gp   :          23
 ---------
 if_reg_pc        : 0x000005e4
@@ -11797,6 +12325,22 @@ exe_alu_out      : 0x12233000
 mem_reg_pc       : 0x000005d8
 mem_wb_data      : 0x12233001
 wb_reg_wb_data   : 0x00002014
+io.gp   :          23
+---------
+if_reg_pc        : 0x000005e4
+id_reg_pc        : 0x000005e0
+id_reg_inst      : 0x00138393
+stall_flg        : 0x1
+id_inst          : 0x00000013
+id_rs1_data      : 0x00000000
+id_rs2_data      : 0x00000000
+exe_reg_pc       : 0x000005dc
+exe_reg_op1_data : 0x00000000
+exe_reg_op2_data : 0x12233000
+exe_alu_out      : 0x12233000
+mem_reg_pc       : 0x000005d8
+mem_wb_data      : 0x12233001
+wb_reg_wb_data   : 0x12233001
 io.gp   :          23
 ---------
 if_reg_pc        : 0x000005e4
@@ -12327,13 +12871,13 @@ mem_wb_data      : 0x00000048
 wb_reg_wb_data   : 0x00001000
 io.gp   :           1
 ---------
-test Top Success: 0 tests passed in 771 cycles in 16.594076 seconds 46.46 Hz
+test Top Success: 0 tests passed in 805 cycles in 16.676227 seconds 48.27 Hz
 [info] RiscvTest:
 [info] mycpu
 [info] - should work through hex
-[info] Run completed in 33 seconds, 470 milliseconds.
+[info] Run completed in 33 seconds, 799 milliseconds.
 [info] Total number of tests run: 1
 [info] Suites: completed 1, aborted 0
 [info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
 [info] All tests passed.
-[success] Total time: 66 s (01:06), completed Nov 8, 2021, 12:34:33 PM
+[success] Total time: 58 s, completed Nov 9, 2021, 11:24:24 AM

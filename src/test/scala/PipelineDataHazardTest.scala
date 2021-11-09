@@ -1,4 +1,4 @@
-package pipeline_datahazard
+package pipeline_datahazard2
 
 import chisel3._
 
