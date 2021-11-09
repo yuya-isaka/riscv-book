@@ -1,4 +1,4 @@
-package pipeline_datahazard2
+package fpga_pipeline
 
 import chisel3._
 import chisel3.util._
@@ -10,8 +10,8 @@ class Core extends Module {
     new Bundle {
       val imem = Flipped(new ImemPortIo())
       val dmem = Flipped(new DmemPortIo())
-      val gp   = Output(UInt(WORD_LEN.W))
-      val exit = Output(Bool())
+      val led   = Output(UInt(WORD_LEN.W))
+      // val exit = Output(Bool())
     }
   )
 
@@ -321,23 +321,23 @@ class Core extends Module {
 
   //**********************************
   // IO & Debug
-  io.gp := regfile(3)
-  io.exit := (mem_reg_pc === 0x44.U(WORD_LEN.W))
+  io.led := regfile(10)
+  // io.exit := (mem_reg_pc === 0x44.U(WORD_LEN.W))
   // io.exit := (id_reg_inst === UNIMP)
-  printf(p"if_reg_pc        : 0x${Hexadecimal(if_reg_pc)}\n")
-  printf(p"id_reg_pc        : 0x${Hexadecimal(id_reg_pc)}\n")
-  printf(p"id_reg_inst      : 0x${Hexadecimal(id_reg_inst)}\n")
-  printf(p"stall_flg        : 0x${Hexadecimal(stall_flg)}\n")
-  printf(p"id_inst          : 0x${Hexadecimal(id_inst)}\n")
-  printf(p"id_rs1_data      : 0x${Hexadecimal(id_rs1_data)}\n")
-  printf(p"id_rs2_data      : 0x${Hexadecimal(id_rs2_data)}\n")
-  printf(p"exe_reg_pc       : 0x${Hexadecimal(exe_reg_pc)}\n")
-  printf(p"exe_reg_op1_data : 0x${Hexadecimal(exe_reg_op1_data)}\n")
-  printf(p"exe_reg_op2_data : 0x${Hexadecimal(exe_reg_op2_data)}\n")
-  printf(p"exe_alu_out      : 0x${Hexadecimal(exe_alu_out)}\n")
-  printf(p"mem_reg_pc       : 0x${Hexadecimal(mem_reg_pc)}\n")
-  printf(p"mem_wb_data      : 0x${Hexadecimal(mem_wb_data)}\n")
-  printf(p"wb_reg_wb_data   : 0x${Hexadecimal(wb_reg_wb_data)}\n")
-  printf(p"io.gp   : ${io.gp}\n")
-  printf("---------\n")
+  // printf(p"if_reg_pc        : 0x${Hexadecimal(if_reg_pc)}\n")
+  // printf(p"id_reg_pc        : 0x${Hexadecimal(id_reg_pc)}\n")
+  // printf(p"id_reg_inst      : 0x${Hexadecimal(id_reg_inst)}\n")
+  // printf(p"stall_flg        : 0x${Hexadecimal(stall_flg)}\n")
+  // printf(p"id_inst          : 0x${Hexadecimal(id_inst)}\n")
+  // printf(p"id_rs1_data      : 0x${Hexadecimal(id_rs1_data)}\n")
+  // printf(p"id_rs2_data      : 0x${Hexadecimal(id_rs2_data)}\n")
+  // printf(p"exe_reg_pc       : 0x${Hexadecimal(exe_reg_pc)}\n")
+  // printf(p"exe_reg_op1_data : 0x${Hexadecimal(exe_reg_op1_data)}\n")
+  // printf(p"exe_reg_op2_data : 0x${Hexadecimal(exe_reg_op2_data)}\n")
+  // printf(p"exe_alu_out      : 0x${Hexadecimal(exe_alu_out)}\n")
+  // printf(p"mem_reg_pc       : 0x${Hexadecimal(mem_reg_pc)}\n")
+  // printf(p"mem_wb_data      : 0x${Hexadecimal(mem_wb_data)}\n")
+  // printf(p"wb_reg_wb_data   : 0x${Hexadecimal(wb_reg_wb_data)}\n")
+  // printf(p"io.gp   : ${io.gp}\n")
+  // printf("---------\n")
 }

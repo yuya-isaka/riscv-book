@@ -1,4 +1,4 @@
-package pipeline_datahazard2
+package fpga_pipeline
 
 import chisel3._
 import chisel3.util._
