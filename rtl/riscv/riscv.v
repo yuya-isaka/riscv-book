@@ -9,7 +9,7 @@ module Core(
   input         io_dmem_rvalid,
   output [1:0]  io_dmem_wen,
   output [31:0] io_dmem_wdata,
-  output [31:0] io_led
+  output [15:0] io_led
 );
 `ifdef RANDOMIZE_MEM_INIT
   reg [31:0] _RAND_0;
@@ -508,7 +508,7 @@ module Core(
   assign io_dmem_ren = mem_reg_wb_sel == 3'h1; // @[Core.scala 281:35]
   assign io_dmem_wen = mem_reg_mem_wen; // @[Core.scala 283:17]
   assign io_dmem_wdata = mem_reg_rs2_data; // @[Core.scala 284:17]
-  assign io_led = regfile_io_led_MPORT_data; // @[Core.scala 324:10]
+  assign io_led = regfile_io_led_MPORT_data[15:0]; // @[Core.scala 324:24]
   always @(posedge clock) begin
     if(regfile_MPORT_1_en & regfile_MPORT_1_mask) begin
       regfile[regfile_MPORT_1_addr] <= regfile_MPORT_1_data; // @[Core.scala 18:20]
@@ -1034,7 +1034,7 @@ endmodule
 module Top(
   input         clock,
   input         reset,
-  output [31:0] io_led
+  output [15:0] io_led
 );
   wire  core_clock; // @[Top.scala 13:20]
   wire  core_reset; // @[Top.scala 13:20]
@@ -1046,7 +1046,7 @@ module Top(
   wire  core_io_dmem_rvalid; // @[Top.scala 13:20]
   wire [1:0] core_io_dmem_wen; // @[Top.scala 13:20]
   wire [31:0] core_io_dmem_wdata; // @[Top.scala 13:20]
-  wire [31:0] core_io_led; // @[Top.scala 13:20]
+  wire [15:0] core_io_led; // @[Top.scala 13:20]
   wire  memory_clock; // @[Top.scala 14:22]
   wire  memory_reset; // @[Top.scala 14:22]
   wire [31:0] memory_io_imem_addr; // @[Top.scala 14:22]

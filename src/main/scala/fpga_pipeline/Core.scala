@@ -10,7 +10,7 @@ class Core extends Module {
     new Bundle {
       val imem = Flipped(new ImemPortIo())
       val dmem = Flipped(new DmemPortIo())
-      val led   = Output(UInt(WORD_LEN.W))
+      val led   = Output(UInt(16.W))
       // val exit = Output(Bool())
     }
   )
@@ -321,7 +321,7 @@ class Core extends Module {
 
   //**********************************
   // IO & Debug
-  io.led := regfile(10)
+  io.led := regfile(10)(15,0)
   // io.exit := (mem_reg_pc === 0x44.U(WORD_LEN.W))
   // io.exit := (id_reg_inst === UNIMP)
   // printf(p"if_reg_pc        : 0x${Hexadecimal(if_reg_pc)}\n")

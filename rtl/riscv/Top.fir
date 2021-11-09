@@ -3,7 +3,7 @@ circuit Top :
   module Core : 
     input clock : Clock
     input reset : Reset
-    output io : {flip imem : {flip addr : UInt<32>, inst : UInt<32>, valid : UInt<1>}, flip dmem : {flip addr : UInt<32>, rdata : UInt<32>, flip ren : UInt<1>, rvalid : UInt<1>, flip wen : UInt<2>, flip wdata : UInt<32>}, led : UInt<32>}
+    output io : {flip imem : {flip addr : UInt<32>, inst : UInt<32>, valid : UInt<1>}, flip dmem : {flip addr : UInt<32>, rdata : UInt<32>, flip ren : UInt<1>, rvalid : UInt<1>, flip wen : UInt<2>, flip wdata : UInt<32>}, led : UInt<16>}
     
     cmem regfile : UInt<32>[32] @[Core.scala 18:20]
     cmem csr_regfile : UInt<32>[4096] @[Core.scala 19:24]
@@ -672,7 +672,8 @@ circuit Top :
       MPORT_1 <= wb_reg_wb_data @[Core.scala 318:29]
       skip @[Core.scala 317:33]
     infer mport io_led_MPORT = regfile[UInt<4>("h0a")], clock @[Core.scala 324:20]
-    io.led <= io_led_MPORT @[Core.scala 324:10]
+    node _io_led_T = bits(io_led_MPORT, 15, 0) @[Core.scala 324:24]
+    io.led <= _io_led_T @[Core.scala 324:10]
     
   module Memory : 
     input clock : Clock
@@ -771,7 +772,7 @@ circuit Top :
   module Top : 
     input clock : Clock
     input reset : UInt<1>
-    output io : {led : UInt<32>}
+    output io : {led : UInt<16>}
     
     inst core of Core @[Top.scala 13:20]
     core.clock <= clock

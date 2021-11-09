@@ -7,7 +7,7 @@ import chisel3.stage.ChiselStage
 
 class Top extends Module {
   val io = IO(new Bundle {
-    val led = Output(UInt(WORD_LEN.W))
+    val led = Output(UInt(16.W))
     // val exit = Output(Bool())
   })
   val core = Module(new Core())
