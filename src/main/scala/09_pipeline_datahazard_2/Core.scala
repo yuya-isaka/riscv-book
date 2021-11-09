@@ -315,8 +315,8 @@ class Core extends Module {
   //**********************************
   // IO & Debug
   io.gp := regfile(3)
-  //io.exit := (mem_reg_pc === 0x44.U(WORD_LEN.W))
-  io.exit := (id_reg_inst === UNIMP)
+  io.exit := (mem_reg_pc === 0x44.U(WORD_LEN.W))
+  // io.exit := (id_reg_inst === UNIMP)
   printf(p"if_reg_pc        : 0x${Hexadecimal(if_reg_pc)}\n")
   printf(p"id_reg_pc        : 0x${Hexadecimal(id_reg_pc)}\n")
   printf(p"id_reg_inst      : 0x${Hexadecimal(id_reg_inst)}\n")
@@ -331,5 +331,6 @@ class Core extends Module {
   printf(p"mem_reg_pc       : 0x${Hexadecimal(mem_reg_pc)}\n")
   printf(p"mem_wb_data      : 0x${Hexadecimal(mem_wb_data)}\n")
   printf(p"wb_reg_wb_data   : 0x${Hexadecimal(wb_reg_wb_data)}\n")
+  printf(p"io.gp   : ${io.gp}\n")
   printf("---------\n")
 }

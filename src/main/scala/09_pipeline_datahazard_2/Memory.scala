@@ -24,7 +24,7 @@ class Memory extends Module {
   })
 
   val mem = Mem(16384, UInt(8.W))
-  loadMemoryFromFile(mem, "src/riscv/rv32ui-p-andi.hex")
+  loadMemoryFromFile(mem, "src/riscv/rv32mi-p-scall.hex")
   io.imem.inst := Cat(
     mem(io.imem.addr + 3.U(WORD_LEN.W)), 
     mem(io.imem.addr + 2.U(WORD_LEN.W)),
