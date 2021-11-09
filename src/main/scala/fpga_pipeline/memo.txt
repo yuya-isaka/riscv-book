@@ -1,5 +1,5 @@
 sbt "run fpga_pipeline.Elabolate"
 
   initial begin
-    $readmemh("/home/isaka/kivantium-core/test/test.hex", mem);
+    $readmemh("/home/isaka/kivantium-core/test/test2.hex", mem);
   end

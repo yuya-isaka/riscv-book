@@ -863,9 +863,6 @@ module Memory(
   input  [1:0]  io_dmem_wen,
   input  [31:0] io_dmem_wdata
 );
-initial begin
-  $readmemh("/home/isaka/kivantium-core/test/test.hex", mem);
-end
 `ifdef RANDOMIZE_MEM_INIT
   reg [31:0] _RAND_0;
 `endif // RANDOMIZE_MEM_INIT
@@ -874,6 +871,9 @@ end
   reg [31:0] _RAND_2;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] mem [0:16383]; // @[Memory.scala 43:16]
+  initial begin
+    $readmemh("/home/isaka/kivantium-core/test/test2.hex", mem);
+  end
   wire [7:0] mem_instData_hi_hi_data; // @[Memory.scala 43:16]
   wire [13:0] mem_instData_hi_hi_addr; // @[Memory.scala 43:16]
   wire [7:0] mem_instData_hi_lo_data; // @[Memory.scala 43:16]
